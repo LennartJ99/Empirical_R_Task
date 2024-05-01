@@ -1,0 +1,84 @@
+---
+title: Proposal
+author: Lennart Joop
+format: 
+  html:
+    toc: true
+    toc_depth: 2
+    self_contained: true
+execute:
+  echo: true
+  warning: false
+bibliography:  references.bib
+---
+
+# Introduction
+
+This is an awesome report[@askpass]
+
+# Methods
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| ll   |      |      |
+|      |      |      |
+|      |      |      |
+
+: test
+
+```{r}
+#|label:example-code-chunk
+#|output:true
+#|warning:false
+#|code-line-numbers:true
+
+
+library(tidyverse)
+library(palmerpenguins)
+data(penguins)
+subset<-penguins|>filter(island=="Dream")
+```
+
+This is a test with a number `r 1+1`
+
+```{r}
+#| label: fig-graph-with-theme
+#| fig-cap: A graph with a theme
+#| echo: false
+penguins|>
+  ggplot() +
+  geom_point(aes(x=bill_length_mm, y=bill_depth_mm, color=species)) +
+  theme_classic()+
+  labs(
+    title="Penguin bill length and depth",
+    x="Bill length (mm)",
+    y="Bill depth (mm)",
+    col="Species",
+    caption="Source: Palmer Penguins")
+  
+```
+
+```{r}
+#|label: tbl-summary
+#|tbl-cap: Summary of the penguins dataset
+
+library(modelsummary)
+penguins|>
+  select(-species,-island)|>
+  datasummary_skim()|>
+  tinytable::style_tt(fontsize=.75)
+```
+
+```{mermaid}
+%%|label: fig-mermaid-flowchart
+%%|fig-cap: A simple flowchart
+graph TD
+A[Start]-->B[Do something]
+B-->C{Did it work?}
+C-->|Yes|D[End]
+C-->|No| E[Do something else]
+E-->B
+```
+
+```{r}
+```
