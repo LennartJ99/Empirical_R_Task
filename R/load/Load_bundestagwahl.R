@@ -8,3 +8,4 @@ url<-"https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ff
 download.file(url, destfile=here("input","btw17kreis.csv"))
 
 Election2017<-read.csv(here("input","btw17kreis.csv"), sep=";", header=TRUE, encoding="UTF-8",skip=9)
+
