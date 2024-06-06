@@ -1,5 +1,6 @@
 library(sf)
 library(here)
+library(dplyr)
 #To automate the download of the spatial data, we uploaded the corresponding files
 #to our Github repository and download them from there. The original data regarding 
 #the voting districts is from https://www.bundeswahlleiterin.de/bundestagswahlen/2021/wahlkreiseinteilung/downloads.html. 
