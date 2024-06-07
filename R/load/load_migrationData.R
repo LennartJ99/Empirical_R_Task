@@ -1,7 +1,7 @@
 library(here)
 library(dplyr)
 base_url <- "https://github.com/LennartJ99/Empirical_R_Task/raw/main/"
-#Spatial Data Voting Districts 2017
+
 files <- c("/migration_data2022.csv",
            "/2021.csv",
            "/2020.csv",
