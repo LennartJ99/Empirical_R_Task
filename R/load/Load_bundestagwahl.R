@@ -7,5 +7,6 @@ Election<-Election%>%
   filter(Gebietsart=="Wahlkreis")%>%
   filter(Gruppenname=="AfD")%>%
   filter(Stimme=="2")%>%
-  select(c("Gebietsnummer","Anzahl","Prozent","VorpAnzahl","VorpProzent"))
+  select(c("Gebietsnummer","Anzahl","Prozent","VorpAnzahl","VorpProzent"))%>%
+  mutate(Prozent=as.numeric(Prozent))
 

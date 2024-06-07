@@ -148,12 +148,12 @@ Combined_Data<-Combined_Data_test
     mutate(Man2020=as.numeric(Man2020)*percentage21/100,
            Woman2020=as.numeric(Woman2020)*percentage21/100,
            Total2020=as.numeric(Total2020)*percentage21/100)%>%
-    mutate(Man2022=Man2022-Man2020,
-           Man2021=Man2021-Man2020,
-           Woman2022=Woman2022-Woman2020,
-           Woman2021=Woman2021-Woman2020,
-           Total2022=Total2022-Total2020,
-           Total2021=Total2021-Total2020)
+    mutate(DiffMan2022=Man2022-Man2020,
+           DiffMan2021=Man2021-Man2020,
+           DiffWoman2022=Woman2022-Woman2020,
+           DiffWoman2021=Woman2021-Woman2020,
+           DiffTotal2022=Total2022-Total2020,
+           DiffTotal2021=Total2021-Total2020)
     
 
   Combined_Data <- Combined_Data %>%
@@ -185,14 +185,62 @@ Combined_Data<-Combined_Data_test
     mutate(Man2016=as.numeric(Man2016)*percentage17/100,
            Woman2016=as.numeric(Woman2016)*percentage17/100,
            Total2016=as.numeric(Total2016)*percentage17/100)%>%
-    mutate(Man2018=Man2018-Man2016,
-           Man2017=Man2017-Man2016,
-           Woman2018=Woman2018-Woman2016,
-           Woman2017=Woman2017-Woman2016,
-           Total2018=Total2018-Total2016,
-           Total2017=Total2017-Total2016)
+    mutate(DiffMan2018=Man2018-Man2016,
+           DiffMan2017=Man2017-Man2016,
+           DiffWoman2018=Woman2018-Woman2016,
+           DiffWoman2017=Woman2017-Woman2016,
+           DiffTotal2018=Total2018-Total2016,
+           DiffTotal2017=Total2017-Total2016)
+  ###Create Controll Variables
+  ###15 biggest Cities
+  Combined_Data<-Combined_Data%>%
+    mutate(Big.City=ifelse(ARS==11000|ARS==02000|ARS==09162|ARS==05315|ARS==06412|ARS==08111|ARS==05111|ARS==14713|ARS==05913|ARS==05113|ARS==04011|ARS==14612|ARS==03241|ARS==09564|ARS==05112,1,0))%>%
+    ###EastGermany
+    mutate(East.Germany=ifelse(WKR_NR>=12&WKR_NR<=17|WKR_NR>=56&WKR_NR<=74|WKR_NR>=151&WKR_NR<=166|WKR_NR>=189&WKR_NR<=196,1,0))
+###Add up migration data
+  Combined_Data<-Combined_Data%>%
+    group_by(WKR_NR)%>%
+    summarize(Man2016=sum(Man2016),
+              Man2017=sum(Man2017),
+              Man2018=sum(Man2018),
+              Man2020=sum(Man2020),
+              Man2021=sum(Man2021),
+              Man2022=sum(Man2022),
+              Woman2016=sum(Woman2016),
+              Woman2017=sum(Woman2017),
+              Woman2018=sum(Woman2018),
+              Woman2020=sum(Woman2020),
+              Woman2021=sum(Woman2021),
+              Woman2022=sum(Woman2022),
+              Total2016=sum(Total2016),
+              Total2017=sum(Total2017),
+              Total2018=sum(Total2018),
+              Total2020=sum(Total2020),
+              Total2021=sum(Total2021),
+              Total2022=sum(Total2022),
+              DiffMan2018=sum(DiffMan2018),
+              DiffMan2017=sum(DiffMan2017),
+              DiffMan2022=sum(DiffMan2022),
+              DiffMan2021=sum(DiffMan2021),
+              DiffWoman2018=sum(DiffWoman2018),
+              DiffWoman2017=sum(DiffWoman2017),
+              DiffWoman2022=sum(DiffWoman2022),
+              DiffWoman2021=sum(DiffWoman2021),
+              DiffTotal2018=sum(DiffTotal2018),
+              DiffTotal2017=sum(DiffTotal2017),
+              DiffTotal2022=sum(DiffTotal2022),
+              DiffTotal2021=sum(DiffTotal2021),
+              Big.City=max(Big.City),
+              East.Germany=max(East.Germany)
+              )%>%
+    ungroup()
+                            
+      
 
 
 ###Implement Election Data
   
-  
+  Combined_Data <- Combined_Data %>%
+    left_join(Election, by = c("WKR_NR" = "Gebietsnummer"))
+  Combined_Data<-Combined_Data%>%
+    mutate(Prozent=as.numeric(Prozent))
