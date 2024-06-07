@@ -31,6 +31,7 @@ Combined_Data17$intersection_area17<-as.numeric(Combined_Data17$intersection_are
 Combined_Data$intersection_area21<-as.numeric(Combined_Data$intersection_area21)
 ###There were districts that overlapped in the spatial data but not in reality
 ###By Trial and Error we found that 3% is a good threshold to filter out these districts
+###Important!!!!
 Combined_Data<-Combined_Data%>%
   group_by(ARS)%>%
   mutate(percentage21=intersection_area21/sum(intersection_area21)*100)%>%
@@ -237,10 +238,11 @@ Combined_Data<-Combined_Data_test
                             
       
 
-
 ###Implement Election Data
   
   Combined_Data <- Combined_Data %>%
-    left_join(Election, by = c("WKR_NR" = "Gebietsnummer"))
-  Combined_Data<-Combined_Data%>%
-    mutate(Prozent=as.numeric(Prozent))
+    left_join(Election, by = c("WKR_NR" = "Gebietsnummer"))%>%
+    mutate(Election2017=VorpProzent,
+           Election2021=Prozent)%>%
+    select(-c(Prozent,VorpProzent,Anzahl,VorpAnzahl))
+  
