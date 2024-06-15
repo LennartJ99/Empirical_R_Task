@@ -192,12 +192,24 @@ Combined_Data<-Combined_Data_test
            DiffWoman2017=Woman2017-Woman2016,
            DiffTotal2018=Total2018-Total2016,
            DiffTotal2017=Total2017-Total2016)
-  ###Create Controll Variables
-  ###15 biggest Cities
+  ###Create Control Variables
+  ##Add Unemployment Data and Income Data
+  Combined_Data<-Combined_Data%>%
+    left_join(UnE_Income, by = c("ARS" = "ARS"))%>%
+    group_by(WKR_NR)%>%
+    mutate(Unemployment2017=Unemployment2017*percentage17/100,
+           Unemployment2018=Unemployment2018*percentage17/100,
+           Unemployment2021=Unemployment2021*percentage21/100,
+           PurchasePower2017=PurchasePower2017*percentage17/100,
+           PurchasePower2018=PurchasePower2018*percentage17/100,
+           PurchasePower2021=PurchasePower2021*percentage21/100)%>%
+           ungroup()  
+  ##15 biggest Cities
   Combined_Data<-Combined_Data%>%
     mutate(Big.City=ifelse(ARS==11000|ARS==02000|ARS==09162|ARS==05315|ARS==06412|ARS==08111|ARS==05111|ARS==14713|ARS==05913|ARS==05113|ARS==04011|ARS==14612|ARS==03241|ARS==09564|ARS==05112,1,0))%>%
-    ###EastGermany
+  ##EastGermany
     mutate(East.Germany=ifelse(WKR_NR>=12&WKR_NR<=17|WKR_NR>=56&WKR_NR<=74|WKR_NR>=151&WKR_NR<=166|WKR_NR>=189&WKR_NR<=196,1,0))
+  
 ###Add up migration data
   Combined_Data<-Combined_Data%>%
     group_by(WKR_NR)%>%
@@ -231,8 +243,15 @@ Combined_Data<-Combined_Data_test
               DiffTotal2017=sum(DiffTotal2017),
               DiffTotal2022=sum(DiffTotal2022),
               DiffTotal2021=sum(DiffTotal2021),
+              Unemployment2017=sum(Unemployment2017),
+              Unemployment2018=sum(Unemployment2018),
+              Unemployment2021=sum(Unemployment2021),
+              PurchasePower2017=sum(PurchasePower2017),
+              PurchasePower2018=sum(PurchasePower2018),
+              PurchasePower2021=sum(PurchasePower2021),
               Big.City=max(Big.City),
-              East.Germany=max(East.Germany)
+              East.Germany=max(East.Germany),
+              
               )%>%
     ungroup()
                             
