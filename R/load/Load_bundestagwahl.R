@@ -13,5 +13,5 @@ Election<-Election%>%
 
 
 Election<-Election%>%
-  mutate(Prozent=as.numeric(sub(",", ".", Prozent, fixed=TRUE)))%>%
-  mutate(VorpProzent=as.numeric(sub(",", ".", VorpProzent, fixed=TRUE)))
+  mutate(Prozent=as.numeric(gsub(",", ".", Prozent, fixed=TRUE)))%>%
+  mutate(VorpProzent=as.numeric(gsub(",", ".", VorpProzent, fixed=TRUE)))
