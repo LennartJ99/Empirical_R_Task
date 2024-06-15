@@ -1,18 +1,6 @@
 library(here)
 library(dplyr)
-base_url <- "https://github.com/LennartJ99/Empirical_R_Task/raw/main/"
 
-files <- c("/migration_data2022.csv",
-           "/2021.csv",
-           "/2020.csv",
-           "/2018.csv",
-           "/2017.csv",
-           "/2016.csv"
-)
-dest_dir <- here("input")
-for (file in files) {
-  download.file(paste0(base_url, file), destfile = file.path(dest_dir, file), mode = "wb")
-}
 migration2022<-read.csv(here("input","migration_data2022.csv"), sep=";",skip=6, header=FALSE, encoding="UTF-8", colClasses = c(Number = "character"))
 
 migration2022<-migration2022%>%
