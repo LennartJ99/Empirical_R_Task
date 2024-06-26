@@ -11,9 +11,6 @@ In the beginning of the project you should run the following code:
 renv::hydrate()
 library(here)
 ```
-To create the whole database used for our regression run the master script that is in the output ordner with name Master_Script.R or run the following code in the console 
-after opening the project:
+To create the whole database used for our regression run the master script that is in the output ordner with the name Master_Script.R.
 
-```{r}
-Rscript Master_Script.R
-```
+To recreate our regression results, run the Regression.R file afterwards which is also in our output folder.
