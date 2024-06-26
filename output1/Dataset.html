@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lennart Joop and Julia Daetz">
+
+<title>Dataset</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Dataset_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Dataset_files/libs/quarto-html/quarto.js"></script>
+<script src="Dataset_files/libs/quarto-html/popper.min.js"></script>
+<script src="Dataset_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Dataset_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Dataset_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Dataset_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Dataset_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Dataset_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Dataset_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dataset</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lennart Joop and Julia Daetz </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The following document is a presentation of the Data that was used for our Research Project. We will give an overview of the used Data, present the sources and discuss the quality of the used Data. Additionally there will be a Scatter plot and a histogram for the main outcome variable (Change of the number of EU migrants per voting district) and the endogenous variable (AFD voting shares per voting district).</p>
+<section id="endogenous-variable-afd-voting-shares" class="level2">
+<h2 class="anchored" data-anchor-id="endogenous-variable-afd-voting-shares">Endogenous Variable: AFD Voting Shares</h2>
+<p>We used voting data from the national German elections in the years 2017 and 2021. The data is from the “Bundeswahlleiterin” (Federal Returning Officer), which is responsible for the overview and organisation of the federal voting for the Bundestag. The “Bundeswahlleiterin” is directly appointed by the Federal Ministry of the Interior (<a href="https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html" class="uri">https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html</a>). Therefor it is data from an official source and accurate. The unit of measurement are the AFD election results of the second vote in percentage points for each voting district.</p>
+<p><em>Link: <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em> This is the election data of 2021. “Prozent” is the election result from 2021, “VorpProzent” is the election data from the previous election so 2017.</p>
+<p><em>Citation: the Federal Returning Officer, Tabelle: Ergebnisse nach Wahlkreisen (flacher Aufbau). <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary AFD Results 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  4.940   9.176  11.454  12.756  14.198  35.465 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary AFD Results 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.867   7.107   8.861  10.569  11.561  32.533 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="main-outcome-variable-change-of-the-number-of-eu-migrants" class="level2">
+<h2 class="anchored" data-anchor-id="main-outcome-variable-change-of-the-number-of-eu-migrants">Main outcome variable: Change of the number of EU migrants</h2>
+<p>The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/_node.html). We used Migration Data from 2016 and 2020 as a Baseline for the elections in the years 2017 and 2021. We then observed the change of Migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in September, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 month and 15 months after the election. Due to the migration data only being accessible for federal units, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the [Spatial Data] part.</p>
+<p><em>Link: <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
+<p>To acces the data that was used, it is necessary to create a free account and select the years 2016, 2017, 2018, 2020, 2021 and 2022.</p>
+<p><em>Citation: DESTATIS. 12521-0040:Ausländer: Kreise, Stichtag, Geschlecht. <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Migration 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+ -8.689   3.390   5.274  11.219   9.524 127.506       7 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Migration 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+ -3.998   6.747  11.742  15.169  19.238  71.240       7 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Migration 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+-4.1267  0.5747  2.4238  2.9119  4.5094 18.7032      11 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Migration 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+ -8.765   1.051   4.336   5.479   7.956  41.147      11 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+</div>
+</section>
+<section id="control-variables" class="level2">
+<h2 class="anchored" data-anchor-id="control-variables">Control Variables</h2>
+<section id="cv1-big-cities" class="level3">
+<h3 class="anchored" data-anchor-id="cv1-big-cities">CV1: Big Cities</h3>
+<p>We label our voting districts if they are part of a big city or not. As a big city we define the top 15 cities in Germany based on population. We chose this differentiation because there is a large gap in population between number 15, Duisburg with 502000 inhabitants and number 16, Bochum with 365000 inhabitants. The data is from DESTATIS. Due to the data being from an official source the quality of the data can be assumed to be good. The unit of measurement is a dummy variable with 1 if the voting district is part of one of the top 15 cities and 0 if not.</p>
+<p><em>Link: <a href="https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?__blob=publicationFile" class="uri">https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?\_\_blob=publicationFile</a></em></p>
+<p><em>Citation: DESTATIS. Städte in Deutschland. <a href="https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?__blob=publicationFile" class="uri">https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?\_\_blob=publicationFile</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Big Cities</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.00000 0.00000 0.00000 0.05351 0.00000 1.00000 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="cv2-east-germany" class="level3">
+<h3 class="anchored" data-anchor-id="cv2-east-germany">CV2: East Germany</h3>
+<p>Our second variable is a dummy variable that determines if a voting district is located in East Germany or not. We introduce this variable by using data from the Federal Returning Officer, which states which voting district number belongs to which state. We then assign the states “Sachsen”, “Sachsen-Anhalt”, “Thüringen”, “Brandenburg” and “Mecklenburg-Vorpommern” to East Germany. The data is from an official source and thus can be assumed to be reliable. The unit of measurement is a dummy variable with 1 if the voting district is located in East Germany and 0 if not.</p>
+<p><em>Link: <a href="https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html" class="uri">https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html</a></em></p>
+<p><em>Citation: the Federal Returning Officer, Delimitation of constituencies. <a href="https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html" class="uri">https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary East Germany</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.0000  0.0000  0.1639  0.0000  1.0000 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="cv3-healthcare" class="level3">
+<h3 class="anchored" data-anchor-id="cv3-healthcare">CV3: Healthcare</h3>
+<p>One of our control variables is the access to healthcare for each federal district. To quantify this, we use the number of hospital beds per 1000 inhabitants. The data is from the INKAR database, which is a database for indicators of spatial and urban development (BBSR) in Germany, published by the Federal Institute for research on Building, Urban Affairs and Spatial Development. The data is from an official source and can be assumed to be reliable. The data is only available till 2021, so we used data from the years 2017, 2018 and 2021 and used the 2021 data for both 2021 and 2022. The unit of measurement is the number of hospital beds per 1000 inhabitants. s <em>Link:<a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<p>To access the specific data, it is necessary to select “Medizinische und soziale Versorgung”, “Medizinische Versorgung” and then “Krankenhausbetten”. Afterwards it is necessary to select all federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
+<p><em>Citation: BBSR, INKAR Database: Krankenhausbetten je 1000 Einwohner. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Healthcare 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.429   4.585   5.771   6.018   7.141  12.750 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Healthcare 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.419   4.610   5.711   5.969   7.107  13.820 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Healthcare 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  1.401   4.416   5.620   5.829   6.870  14.063       4 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</section>
+<section id="cv4-purchase-power" class="level3">
+<h3 class="anchored" data-anchor-id="cv4-purchase-power">CV4: Purchase Power</h3>
+<p>Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per Inhabitant in Euros. That means its a combination of both the income as well as the living costs in the corresponding state.</p>
+<p><em>Link: <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em> To access the specific data, it is necessary to select “Privateinkommen,”Private Schulden” and then “Kaufkraft”, select all the federal districts and the years 2017,2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
+<p><em>Citattion:BBSR, IMKAR Database: Kaufkraft je Einwohner. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary PP 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  20495   22572   23904   24082   25143   32466 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary PP 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18076   22641   23883   24097   25171   32602 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary PP 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  16949   24373   25598   25757   26889   34082       4 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</section>
+<section id="cv5-unemployment" class="level3">
+<h3 class="anchored" data-anchor-id="cv5-unemployment">CV5: Unemployment</h3>
+<p>Our next control variable is the unemployment rate in each state. We use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so we use data from 2017, 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the unemployment rate in percent.</p>
+<p><em>Link: <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<p>Toa cess the data, it is necessary to select “Absolutzahlen” and then ““Arbeitslosenzahlen”, select all the federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
+<p><em>Citation: BBSR, INKAR Database: Arbeitslosenzahlen. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Unemployment 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.896   3.730   5.621   5.794   7.293  13.980 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Unemployment 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.761   3.431   5.127   5.295   6.711  13.190 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Unemployment 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  2.328   3.950   5.402   5.755   7.245  14.800       4 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</section>
+<section id="cv6-total-population" class="level3">
+<h3 class="anchored" data-anchor-id="cv6-total-population">CV6: Total Population</h3>
+<p>Our final control variable is the total population of EU migrants before the election. This data is from the same dataset as the <a href="#main-outcome-variable-change-of-the-number-of-eu-migrants">Main outcome variable: Change of the number of EU migrants</a>. We use data from 2016 and 2020 as they are our baseline numbers. The data is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. The data is from an official source and can be assumed to be reliable. The unit of measurement is the total number of EU migrants in each voting district.</p>
+<p><em>Link: <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
+<p>To acces the data that was used, it is necessary to create a free account and select the years 2016 and 2020.</p>
+<p><em>Citation: DESTATIS. 12521-0040:Ausländer: Kreise, Stichtag, Geschlecht. <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Total Migrants 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   1303    6992   13004   14391   19020   52843       7 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Total Migrants 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   1978    8260   14996   16601   23153   53841      11 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The numbers of NA is"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data">Spatial Data</h2>
+<section id="thought-process" class="level3">
+<h3 class="anchored" data-anchor-id="thought-process">Thought Process</h3>
+<p>The migration data is only accessible on federal level and the voting data only on voting district level. We decided to project the migration data on the voting district level by using spatial data. We determined, how each federal district is divided into the different voting districts by area. The percentage of a federal district, that belongs to a voting district is used to weight the federal data. This way variables, that are only available on federal district level can be assigned to voting districts. For example if 50% of a federal district belongs to a voting district, 50% of the migrants in said district are assigned to the voting district. Because voting districts are usually a part of multiple federal district, this weighted data is added up. The end result is, that we define voting districts by a combination of different partial federal districts, weighted by the area.</p>
+<p>By using this method we have to assume that population and migrants are distributed equally across the federal district area. This is a very strong assumption. The main reason for us to think this can be assumed to be true is the structure of the federal and voting data. Our initial assumption is mainly violated by large centers of population that concentrate a lot of population and migrants. Those centers of populations are usually their own federal district and not part of a larger federal district, which includes further rural areas. In those centers of populations the population can be seen as roughly equally distributed. A mixture of rural and urban areas, which would implement a strong Bias into our regression, is not common. If such a mix is happening the influence of the urban centers is not as grave, as those are small urban centers, while the larger ones are their own federal districts. To further strengthen this method, we manually assigned percentages to voting districts that are solely part of large population centers (and thus federal districts), such as Berlin. For example Berlin is a federal district that is divided into 12 voting districts, that differ by size are nearly equal in population. Here we assigned each voting district 1/12 of the federal district population instead of dividing by size. This is possible due to the German law, which states that voting districts have to beroughly equal in size (https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html).</p>
+</section>
+<section id="programming-process" class="level3">
+<h3 class="anchored" data-anchor-id="programming-process">Programming Process</h3>
+<p>The following process was used to combine both datasets.</p>
+<ol type="1">
+<li><p>Create maps with borders of voting districts and federal districts by using the st_read command from the “sf”-package, which is used to wrangle spatial data.</p></li>
+<li><p>Use the st_intersection command to combine both datasets. This command joins the voting district data with the federal district data by using the borders of both spatial datasets.</p></li>
+<li><p>Use the st_area command to calculate each voting district and federal district intersection.</p></li>
+<li><p>We now determine how much of each federal voting district belongs to a specific voting district (f.e. 50% of federal district 1 belongs to voting district 1 and 50% to voting district 2). This is used to weigh our data and assign the federal district data to the voting district data. Each voting district is now a combination of each federal district that belongs to it.</p></li>
+<li><p>We eliminated dependencies in the dataset that existed in the spatial data but not in reality. We determined by Trial and Error that 3% is a good treshhold. That means, if less then 3% of a federal district belongs to a certain voting district the dependency is eliminated. We assume this faulty dependencies are due to the spatial data not being entirely accurate.</p></li>
+</ol>
+</section>
+<section id="voting-districts-data" class="level3">
+<h3 class="anchored" data-anchor-id="voting-districts-data">Voting districts data</h3>
+<p>To access voting district spatial data, we used data provided by the Federal Returning Officer. The data is from an official source and can be assumed to be reliable. As voting districts differ in 2017 and 2021 we used spatial data from both years.</p>
+<p><em>Link (2017): <a href="https://www.bundeswahlleiterin.de/dam/jcr/67e3e9b8-dbca-4bc9-8977-ac792665bbce/btw17_geometrie_wahlkreise_vg250_shp.zip" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/67e3e9b8-dbca-4bc9-8977-ac792665bbce/btw17_geometrie_wahlkreise_vg250_shp.zip</a></em></p>
+<p><em>Link (2021): <a href="https://www.bundeswahlleiterin.de/dam/jcr/f0ce06a7-188c-4ef3-b49b-5a66719d2b46/btw21_geometrie_wahlkreise_vg250_shp.zip" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/f0ce06a7-188c-4ef3-b49b-5a66719d2b46/btw21_geometrie_wahlkreise_vg250_shp.zip</a></em></p>
+<p><em>Citation (2017): the Federal Returning Officer, Map of constituencies for download. <a href="https://www.bundeswahlleiterin.de/dam/jcr/67e3e9b8-dbca-4bc9-8977-ac792665bbce/btw17_geometrie_wahlkreise_vg250_shp.zip" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/67e3e9b8-dbca-4bc9-8977-ac792665bbce/btw17_geometrie_wahlkreise_vg250_shp.zip</a></em></p>
+<p><em>Citation (2021): the Federal Returning Officer, Map of constituencies for download. <a href="https://www.bundeswahlleiterin.de/dam/jcr/f0ce06a7-188c-4ef3-b49b-5a66719d2b46/btw21_geometrie_wahlkreise_vg250_shp.zip" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/f0ce06a7-188c-4ef3-b49b-5a66719d2b46/btw21_geometrie_wahlkreise_vg250_shp.zip</a></em></p>
+</section>
+<section id="federal-districts-data" class="level3">
+<h3 class="anchored" data-anchor-id="federal-districts-data">Federal districts data</h3>
+<p>To access federal district spatial data, we used data provided by the Federal Agency for Cartography and Geodesy. The data is from an official source and can be assumed to be reliable. The data is from the 01.01.2023.</p>
+<p><em>Link: <a href="https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip" class="uri">https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip</a></em></p>
+<p>This link provides data for different organisational units. To access the spatial federal district data, it is necessary to select the files with the name “VG250_KRS”.</p>
+<p><em>Citation: Federal Agency for Cartography and Geodesy, Verwaltungsgebiete 1:250 000 Stand 01.01. (VG250 01.01.). <a href="https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip" class="uri">https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip</a></em></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
