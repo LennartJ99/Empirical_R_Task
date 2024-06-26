@@ -31,20 +31,27 @@ Combined_Data17$intersection_area17<-as.numeric(Combined_Data17$intersection_are
 Combined_Data$intersection_area21<-as.numeric(Combined_Data$intersection_area21)
 ###There were districts that overlapped in the spatial data but not in reality
 ###By Trial and Error we found that 3% is a good threshold to filter out these districts
-###Important!!!!
 Combined_Data<-Combined_Data%>%
   group_by(ARS)%>%
   mutate(percentage21=intersection_area21/sum(intersection_area21)*100)%>%
   ungroup()
 Combined_Data$percentage21<-as.numeric(as.character(Combined_Data$percentage21))
+
 Combined_Data<-Combined_Data%>%
   group_by(ARS)%>%
   filter(percentage21>3)%>%
   mutate(percentage21=intersection_area21/sum(intersection_area21)*100)%>%
-  select(-c(intersection_area21))%>%
   ungroup()
+  ###Before We determined, how much of each federal district belongs to a voting district, not we do the reverse calculation,
+  ### we determine how each voting district is split up among the federal districts.
+  Combined_Data<-Combined_Data%>%
+  group_by(WKR_NR)%>%
+  mutate(percentage21rev=intersection_area21/sum(intersection_area21)*100)%>%
+  ungroup()%>%
+  select(-c(intersection_area21))
+Combined_Data$percentage21rev<-as.numeric(as.character(Combined_Data$percentage21rev))
 
-
+  ###Same for the 2017 spatial Data
 Combined_Data17<-Combined_Data17%>%
   group_by(ARS)%>%
   mutate(percentage17=intersection_area17/sum(intersection_area17)*100)%>%
@@ -54,21 +61,25 @@ Combined_Data17<-Combined_Data17%>%
   group_by(ARS)%>%
   filter(percentage17>3)%>%
   mutate(percentage17=intersection_area17/sum(intersection_area17)*100)%>%
-  select(-c(intersection_area17))%>%
   ungroup()
+Combined_Data17<-Combined_Data17%>%
+  group_by(WKR_NR)%>%
+  mutate(percentage17rev=intersection_area17/sum(intersection_area17)*100)%>%
+  ungroup()%>%
+  select(-c(intersection_area17))
+Combined_Data17$percentage17rev<-as.numeric(as.character(Combined_Data17$percentage17rev))
 
-  
 
 ###Before combining both datasets, we need to add "proxy" relations between federal
 ###and voting districts, that didnt exist in 2017 but do in 2021.
 Combined_Data17<-Combined_Data17%>%
-add_row(ARS="09375",WKR_NR=234,percentage17=0)%>%
-add_row(ARS="09575",WKR_NR=242,percentage17=0)%>%
-add_row(ARS="09772",WKR_NR=254,percentage17=0)
+add_row(ARS="09375",WKR_NR=234,percentage17=0,percentage17rev=0)%>%
+add_row(ARS="09575",WKR_NR=242,percentage17=0,percentage17rev=0)%>%
+add_row(ARS="09772",WKR_NR=254,percentage17=0,percentage17rev=0)
 
 Combined_Data<-Combined_Data%>%
   right_join(.,Combined_Data17 %>%
-              select(ARS, WKR_NR, percentage17), by = c("ARS", "WKR_NR"))
+              select(ARS, WKR_NR, percentage17,percentage17rev), by = c("ARS", "WKR_NR"))
 
 
 
@@ -192,18 +203,19 @@ Combined_Data<-Combined_Data_test
            DiffWoman2017=Woman2017-Woman2016,
            DiffTotal2018=Total2018-Total2016,
            DiffTotal2017=Total2017-Total2016)
-  ###Create Control Variables
+  ###Add Population Data
+  Combined_Data<-Combined_Data%>%
+    left_join(Population, by = c("ARS" = "ARS"))%>%
+    group_by(ARS)%>%
+    mutate(Population2017=Population2017*percentage17/100,
+           Population2021=Population2021*percentage21/100)%>%
+    ungroup()
   ##Add Unemployment Data and Income Data
   Combined_Data<-Combined_Data%>%
-    left_join(UnE_Income, by = c("ARS" = "ARS"))%>%
-    group_by(WKR_NR)%>%
-    mutate(Unemployment2017=Unemployment2017*percentage17/100,
-           Unemployment2018=Unemployment2018*percentage17/100,
-           Unemployment2021=Unemployment2021*percentage21/100,
-           PurchasePower2017=PurchasePower2017*percentage17/100,
-           PurchasePower2018=PurchasePower2018*percentage17/100,
-           PurchasePower2021=PurchasePower2021*percentage21/100)%>%
-           ungroup()  
+    left_join(UnE_Income, by = c("ARS" = "ARS"))
+  Combined_Data<-Combined_Data%>%
+    left_join(Healthcare, by = c("ARS" = "ARS"))
+  ###Create Control Variables
   ##15 biggest Cities
   Combined_Data<-Combined_Data%>%
     mutate(Big.City=ifelse(ARS==11000|ARS==02000|ARS==09162|ARS==05315|ARS==06412|ARS==08111|ARS==05111|ARS==14713|ARS==05913|ARS==05113|ARS==04011|ARS==14612|ARS==03241|ARS==09564|ARS==05112,1,0))%>%
@@ -211,50 +223,61 @@ Combined_Data<-Combined_Data_test
     mutate(East.Germany=ifelse(WKR_NR>=12&WKR_NR<=17|WKR_NR>=56&WKR_NR<=74|WKR_NR>=151&WKR_NR<=166|WKR_NR>=189&WKR_NR<=196,1,0))
   
 ###Add up migration data
-  Combined_Data<-Combined_Data%>%
-    group_by(WKR_NR)%>%
-    summarize(Man2016=sum(Man2016),
-              Man2017=sum(Man2017),
-              Man2018=sum(Man2018),
-              Man2020=sum(Man2020),
-              Man2021=sum(Man2021),
-              Man2022=sum(Man2022),
-              Woman2016=sum(Woman2016),
-              Woman2017=sum(Woman2017),
-              Woman2018=sum(Woman2018),
-              Woman2020=sum(Woman2020),
-              Woman2021=sum(Woman2021),
-              Woman2022=sum(Woman2022),
-              Total2016=sum(Total2016),
-              Total2017=sum(Total2017),
-              Total2018=sum(Total2018),
-              Total2020=sum(Total2020),
-              Total2021=sum(Total2021),
-              Total2022=sum(Total2022),
-              DiffMan2018=sum(DiffMan2018),
-              DiffMan2017=sum(DiffMan2017),
-              DiffMan2022=sum(DiffMan2022),
-              DiffMan2021=sum(DiffMan2021),
-              DiffWoman2018=sum(DiffWoman2018),
-              DiffWoman2017=sum(DiffWoman2017),
-              DiffWoman2022=sum(DiffWoman2022),
-              DiffWoman2021=sum(DiffWoman2021),
-              DiffTotal2018=sum(DiffTotal2018),
-              DiffTotal2017=sum(DiffTotal2017),
-              DiffTotal2022=sum(DiffTotal2022),
-              DiffTotal2021=sum(DiffTotal2021),
-              Unemployment2017=sum(Unemployment2017),
-              Unemployment2018=sum(Unemployment2018),
-              Unemployment2021=sum(Unemployment2021),
-              PurchasePower2017=sum(PurchasePower2017),
-              PurchasePower2018=sum(PurchasePower2018),
-              PurchasePower2021=sum(PurchasePower2021),
-              Big.City=max(Big.City),
-              East.Germany=max(East.Germany),
-              
-              )%>%
+
+  
+  Combined_Data <- Combined_Data %>%
+    group_by(WKR_NR) %>%
+    summarize(
+      Man2016 = sum(Man2016),
+      Man2017 = sum(Man2017),
+      Man2018 = sum(Man2018),
+      Man2020 = sum(Man2020),
+      Man2021 = sum(Man2021),
+      Man2022 = sum(Man2022),
+      Woman2016 = sum(Woman2016),
+      Woman2017 = sum(Woman2017),
+      Woman2018 = sum(Woman2018),
+      Woman2020 = sum(Woman2020),
+      Woman2021 = sum(Woman2021),
+      Woman2022 = sum(Woman2022),
+      Total2016 = sum(Total2016),
+      Total2017 = sum(Total2017),
+      Total2018 = sum(Total2018),
+      Total2020 = sum(Total2020),
+      Total2021 = sum(Total2021),
+      Total2022 = sum(Total2022),
+      DiffMan2018 = sum(DiffMan2018),
+      DiffMan2017 = sum(DiffMan2017),
+      DiffMan2022 = sum(DiffMan2022),
+      DiffMan2021 = sum(DiffMan2021),
+      DiffWoman2018 = sum(DiffWoman2018),
+      DiffWoman2017 = sum(DiffWoman2017),
+      DiffWoman2022 = sum(DiffWoman2022),
+      DiffWoman2021 = sum(DiffWoman2021),
+      DiffTotal2018 = sum(DiffTotal2018),
+      DiffTotal2017 = sum(DiffTotal2017),
+      DiffTotal2022 = sum(DiffTotal2022),
+      DiffTotal2021 = sum(DiffTotal2021),
+      Unemployment2017 = weighted.mean(Unemployment2017, Population2017),
+      Unemployment2018 = weighted.mean(Unemployment2018, Population2017),
+      Unemployment2021 = weighted.mean(Unemployment2021, Population2021),
+      PurchasePower2017 = weighted.mean(PurchasePower2017, Population2017),
+      PurchasePower2018 = weighted.mean(PurchasePower2018, Population2017),
+      PurchasePower2021 = weighted.mean(PurchasePower2021, Population2021),
+      KH2017 = weighted.mean(KH2017, Population2017),
+      KH2018 = weighted.mean(KH2018, Population2017),
+      KH2021 = weighted.mean(KH2021, Population2021),
+      Population2017 = sum(Population2017),
+      Population2021 = sum(Population2021),
+      Big.City = max(Big.City),
+      East.Germany = max(East.Germany),
+
+    ) %>%
     ungroup()
-                            
+  
+
+  
+                          
       
 
 ###Implement Election Data
