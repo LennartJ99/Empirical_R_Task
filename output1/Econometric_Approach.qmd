@@ -27,3 +27,17 @@ Our observation units are 299 German voting districts. We run four different reg
 Because AFD voting results are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AFD voting shares.
 
 ## Mechanism
+
+@Julia kannst du hier den 1. part schreiben? also die story unserer Regression, bzw hier würde ich gerne deinen Einleitungstext reinnehmen.
+
+Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.
+
+## Sources of Bias and Identification
+
+The connection we are trying to evaluate is hard to isolate cleanly. There are many factors that influence migration decisions in Europe:
+
+-   economic opportunities such as potential incomes
+-   access to healthcare
+-   access to good education for the children
+-   social factors such as child support, the access to other family members or a social group of people of similar culture
+-   political climate in home and destination country
