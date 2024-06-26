@@ -1,0 +1,23 @@
+---
+title: "Econometric Approach"
+format: html
+editor: visual
+author: "Lennart Joop and Julia Daetz"
+bibliography: references.bib
+echo: false
+warning: false
+---
+# Econometric Approach
+This document presents the econometric approach we used in our research project, as described in Milestone 3.
+
+## Economic Model
+
+Flowchart function of the economic model @Julia xenophobia--\> AFD voting results --\> impact on EU Migrants
+
+(schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon) \## Setting
+
+Endogenous Variable: Xenophobia which we proxy by using AFD voting results
+
+Main Outcome Variable: The percentage change of the number of EU migrants
+
+We observe 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.

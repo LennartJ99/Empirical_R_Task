@@ -73,7 +73,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="endogenous-variable-afd-voting-shares" class="level2">
 <h2 class="anchored" data-anchor-id="endogenous-variable-afd-voting-shares">Endogenous Variable: AFD Voting Shares</h2>
 <p>We used voting data from the national German elections in the years 2017 and 2021. The data is from the “Bundeswahlleiterin” (Federal Returning Officer), which is responsible for the overview and organisation of the federal voting for the Bundestag. The “Bundeswahlleiterin” is directly appointed by the Federal Ministry of the Interior (<a href="https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html" class="uri">https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html</a>). Therefor it is data from an official source and accurate. The unit of measurement are the AFD election results of the second vote in percentage points for each voting district.</p>
-<p><em>Link: <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em> This is the election data of 2021. “Prozent” is the election result from 2021, “VorpProzent” is the election data from the previous election so 2017.</p>
+<p><em>Link: <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em></p>
+<p>This is the election data of 2021. “Prozent” is the election result from 2021, “VorpProzent” is the election data from the previous election so 2017.</p>
 <p><em>Citation: the Federal Returning Officer, Tabelle: Ergebnisse nach Wahlkreisen (flacher Aufbau). <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -173,6 +174,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
+<section id="scatterplot-of-the-main-variables" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot-of-the-main-variables">Scatterplot of the Main Variables</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 <section id="control-variables" class="level2">
 <h2 class="anchored" data-anchor-id="control-variables">Control Variables</h2>
 <section id="cv1-big-cities" class="level3">
@@ -267,6 +301,29 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="cv4-purchase-power" class="level3">
 <h3 class="anchored" data-anchor-id="cv4-purchase-power">CV4: Purchase Power</h3>
@@ -305,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Summary PP 2017</code></pre>
+<pre><code>Summary PP 2021</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
@@ -316,6 +373,29 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -370,6 +450,29 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="cv6-total-population" class="level3">
 <h3 class="anchored" data-anchor-id="cv6-total-population">CV6: Total Population</h3>
@@ -405,6 +508,22 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Dataset_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>

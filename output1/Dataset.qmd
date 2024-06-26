@@ -8,13 +8,15 @@ echo: false
 warning: false
 ---
 
-The following document is a presentation of the Data that was used for our Research Project. We will give an overview of the used Data, present the sources and discuss the quality of the used Data. Additionally there will be a Scatter plot and a histogram for the main outcome variable (Change of the number of EU migrants per voting district) and the endogenous variable (AFD voting shares per voting district).
+The following document is a presentation of the Data that was used for our Research Project as described in Milestone 2. We will give an overview of the used Data, present the sources and discuss the quality of the used Data. Additionally there will be a Scatter plot and a histogram for the main outcome variable (Change of the number of EU migrants per voting district) and the endogenous variable (AFD voting shares per voting district).
 
 ## Endogenous Variable: AFD Voting Shares
 
 We used voting data from the national German elections in the years 2017 and 2021. The data is from the "Bundeswahlleiterin" (Federal Returning Officer), which is responsible for the overview and organisation of the federal voting for the Bundestag. The "Bundeswahlleiterin" is directly appointed by the Federal Ministry of the Interior (<https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html>). Therefor it is data from an official source and accurate. The unit of measurement are the AFD election results of the second vote in percentage points for each voting district.
 
-*Link: <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>* This is the election data of 2021. "Prozent" is the election result from 2021, "VorpProzent" is the election data from the previous election so 2017.
+*Link: <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>*
+
+This is the election data of 2021. "Prozent" is the election result from 2021, "VorpProzent" is the election data from the previous election so 2017.
 
 *Citation: the Federal Returning Officer, Tabelle: Ergebnisse nach Wahlkreisen (flacher Aufbau). <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>*
 
@@ -34,6 +36,7 @@ source(here("R/load","Load_bundestagwahl.R"))
 source(here("R/load","load_migrationData.R"))
 source(here("R/wrangle","Combined_Data.R"))
 ```
+
 ```{r}
 cat("Summary AFD Results 2017")
 summary(Combined_Data$Election2017)
@@ -70,7 +73,7 @@ To acces the data that was used, it is necessary to create a free account and se
 #|result: "hide"
 
 
-source(here("Output", "Regression.R"))
+source(here("output1", "Regression.R"))
 ```
 
 ```{r}
@@ -115,6 +118,31 @@ summary(simple.lm.per4$DiffTotal2022)
 "The numbers of NA is"
 sum(is.na(simple.lm.per4$DiffTotal2022))
 
+```
+
+## Scatterplot of the Main Variables
+
+```{r}
+library(ggplot2)
+plot2017<-ggplot(data=simple.lm.per1 )+
+  geom_point(mapping =aes(x=Election2017,y=DiffTotal2017))+
+  labs(title="Scatterplot of Voting Results and Migration 2017", x="Voting results", y="Percentage change in EU migrants")
+print(plot2017)
+
+plot2018<-ggplot(data=simple.lm.per2 )+
+  geom_point(mapping =aes(x=Election2017,y=DiffTotal2018))+
+  labs(title="Scatterplot of Voting Results and Migration 2018", x="Voting results", y="Percentage change in EU migrants")
+print(plot2018)
+
+plot2021<-ggplot(data=simple.lm.per3 )+
+  geom_point(mapping =aes(x=Election2021,y=DiffTotal2021))+
+  labs(title="Scatterplot of Voting Results and Migration 2021", x="Voting results", y="Percentage change in EU migrants")
+print(plot2021)
+
+plot2022<-ggplot(data=simple.lm.per4 )+
+  geom_point(mapping =aes(x=Election2021,y=DiffTotal2022))+
+  labs(title="Scatterplot of Voting Results and Migration 2022", x="Voting results", y="Percentage change in EU migrants")
+print(plot2022)
 ```
 
 ## Control Variables
@@ -203,6 +231,27 @@ sum(is.na(Combined_Data$KH2021))
 
 ```
 
+```{r}
+#|label: Plot_Healthcare_2017
+#|output: TRUE
+#|code-line-numbers: FALSE
+
+HC2017<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=KH2017),bins=20,fill="blue",color="black")+
+  labs(title="Histogram of Healthcare 2017", x="Hospital Beds per 1000 Inhabitants", y="Number of Voting Districts")
+print(HC2017)
+
+HC2018<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=KH2018),bins=20,fill="blue",color="black")+
+  labs(title="Histogram of Healthcare 2018", x="Hospital Beds per 1000 Inhabitants", y="Number of Voting Districts")
+print(HC2018)
+
+HC2019<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=KH2021),bins=20,fill="blue",color="black")+
+  labs(title="Histogram of Healthcare 2021", x="Hospital Beds per 1000 Inhabitants", y="Number of Voting Districts")
+print(HC2019)
+```
+
 ### CV4: Purchase Power
 
 Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per Inhabitant in Euros. That means its a combination of both the income as well as the living costs in the corresponding state.
@@ -238,10 +287,31 @@ sum(is.na(Combined_Data$PurchasePower2018))
 #|output: TRUE
 #|code-line-numbers: FALSE
 
-cat("Summary PP 2017")
+cat("Summary PP 2021")
 summary(Combined_Data$PurchasePower2021)
 "The numbers of NA is"
 sum(is.na(Combined_Data$PurchasePower2021))
+```
+
+```{r}
+#|label: Plot_PP_2017
+#|output: TRUE
+#|code-line-numbers: FALSE
+
+PP2017<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=PurchasePower2017),bins=20,fill="red",color="black")+
+  labs(title="Histogram of Purchase Power 2017", x="Average Purchase Power of individuals", y="Number of Voting Districts")
+print(PP2017)
+
+PP2018<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=PurchasePower2018),bins=20,fill="red",color="black")+
+  labs(title="Histogram of Purchase Power 2018", x="Average Purchase Power of individuals", y="Number of Voting Districts")
+print(PP2018)
+
+PP2021<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=PurchasePower2021),bins=20,fill="red",color="black")+
+  labs(title="Histogram of Purchase Power 2021", x="Average Purchase Power of individuals", y="Number of Voting Districts")
+print(PP2021)
 ```
 
 ### CV5: Unemployment
@@ -287,6 +357,26 @@ summary(Combined_Data$Unemployment2021)
 sum(is.na(Combined_Data$Unemployment2021))
 ```
 
+```{r}
+#|label: Plot_Unemploment_2017
+#|output: TRUE
+#|code-line-numbers: FALSE
+UE2017<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=Unemployment2017),bins=20,fill="green",color="black")+
+  labs(title="Histogram of Unemployment 2017", x="Unemployment Rate", y="Number of Voting Districts")
+print(UE2017)
+
+UE2018<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=Unemployment2018),bins=20,fill="green",color="black")+
+  labs(title="Histogram of Unemployment 2018", x="Unemployment Rate", y="Number of Voting Districts")
+print(UE2018)
+
+UE2021<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=Unemployment2021),bins=20,fill="green",color="black")+
+  labs(title="Histogram of Unemployment 2021", x="Unemployment Rate", y="Number of Voting Districts")
+print(UE2021)
+```
+
 ### CV6: Total Population
 
 Our final control variable is the total population of EU migrants before the election. This data is from the same dataset as the [Main outcome variable: Change of the number of EU migrants]. We use data from 2016 and 2020 as they are our baseline numbers. The data is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. The data is from an official source and can be assumed to be reliable. The unit of measurement is the total number of EU migrants in each voting district.
@@ -317,6 +407,20 @@ cat("Summary Total Migrants 2020")
 summary(Combined_Data$Total2020)
 "The numbers of NA is"
 sum(is.na(Combined_Data$Total2020))
+```
+
+```{r}
+#|output: TRUE
+#|code-line-numbers: FALSE
+TotalM2016<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=Total2016),bins=20,fill="violet",color="black")+
+  labs(title="Histogram of Total EU Migrants 2016", x="Total Migrants", y="Number of Voting Districts")
+print(TotalM2016)
+
+TotalM2020<-ggplot()+
+  geom_histogram(data=Combined_Data,aes(x=Total2020),bins=20,fill="violet",color="black")+
+  labs(title="Histogram of Total EU Migrants 2020", x="Total Migrants", y="Number of Voting Districts")
+print(TotalM2020)
 ```
 
 ## Spatial Data

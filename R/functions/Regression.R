@@ -1,3 +1,4 @@
+library(dplyr)
 ###Basic Regression without Control Variables and Total Migration Differential Numbers
 simple.lm.tot1<-summary(lm(data=Combined_Data, DiffTotal2017~Election2017))
 
