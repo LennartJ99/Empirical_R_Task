@@ -41,3 +41,49 @@ The connection we are trying to evaluate is hard to isolate cleanly. There are m
 -   access to good education for the children
 -   social factors such as child support, the access to other family members or a social group of people of similar culture
 -   political climate in home and destination country
+
+To isolate the effect of AFD voting results we introduced control variables that should capture the influence of the other factors.
+
+The control variable "Big Cities" is supposed to capture the greater attentiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.
+
+The control variable "East Germany" is supposed to capture the different political climate in East Germany compared to West Germany and the worse economic situation inbetween both parts of Germany.
+
+The control variable "Total Population" is supposed to capture the attractiveness of a region due to an already existing population of migrants which helps with integration and the access to a social group of people of similar culture.
+
+The control variable "Unemployment" and "Purchase Power" is supposed to capture the economic opportunities in a region.
+
+The control variable "Healthcare" is supposed to capture the access to healthcare in a region, which is an important factor for migration decisions.
+
+We assume the overall direction of this bias is positive. Despite including several factors that could influence migration decisions there are still many factors that could influence such a complex choice. We are not able to include all of them in our model. This leads to an overestimation of the effect of AFD voting results on the change of EU migrants.
+
+Another source of potential bias is the creation of our data set. We assign our federal district data to the voting districts by weighting the data via the share of area of the federal district that is in the voting district. This is just an approximation and differs from the real distribution of the population and migrants. Unfortunately we have no way of removing or isolating this bias. We also don\`t know the direction of this bias. It could be positive if the data is distributed in a way that the voting districts with the highest AFD voting results have a higher share of federal district area while in reality having less population. But this could also be reversed.
+
+## Formulas
+
+[Baseline OLS formulas:]{.underline}
+
+*`Main outcome variable<- Endogenous variable`*
+
+[with the following pairings:]{.underline}
+
+**1)**\
+MOV: Percentage change of EU migrants 31.12.2017 compared to 31.12.2016
+
+EV: Vote results of the AFD on 24.09.2017
+
+**2)**\
+MOV: Percentage change of EU migrants 31.12.2018 compared to 31.12.2016
+
+EV: Vote results of the AFD on 24.09.2017
+
+**3)**\
+MOV: Percentage change of EU migrants 31.12.2021 compared to 31.12.2020
+
+EV: Vote results of the AFD on 26.09.2021
+
+**4)**\
+MOV: Percentage change of EU migrants 31.12.2022 compared to 31.12.2020
+
+EV: Vote results of the AFD on 26.09.2021
+
+[OLS formula with control variables:]{.underline}

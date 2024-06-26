@@ -69,17 +69,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="econometric-approach" class="level1">
-<h1>Econometric Approach</h1>
 <p>This document presents the econometric approach we used in our research project, as described in Milestone 3.</p>
 <section id="economic-model" class="level2">
 <h2 class="anchored" data-anchor-id="economic-model">Economic Model</h2>
 <p>Flowchart function of the economic model <span class="citation" data-cites="Julia">(<a href="#ref-Julia" role="doc-biblioref"><strong>Julia?</strong></a>)</span> xenophobia–&gt; AFD voting results –&gt; impact on EU Migrants</p>
-<p>(schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon) ## Setting</p>
-<p>Endogenous Variable: Xenophobia which we proxy by using AFD voting results</p>
-<p>Main Outcome Variable: The percentage change of the number of EU migrants</p>
-<p>We observe 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.</p>
+<p>(schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon)<br>
+</p>
 </section>
+<section id="setting" class="level2">
+<h2 class="anchored" data-anchor-id="setting">Setting</h2>
+<p><strong>Endogenous Variable:</strong> Xenophobia which we proxy by using AFD voting results</p>
+<p><strong>Main Outcome Variable:</strong> The percentage change of the number of EU migrants</p>
+<p>Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.</p>
+<p>Because AFD voting results are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AFD voting shares.</p>
+</section>
+<section id="mechanism" class="level2">
+<h2 class="anchored" data-anchor-id="mechanism">Mechanism</h2>
+<p><span class="citation" data-cites="Julia">(<a href="#ref-Julia" role="doc-biblioref"><strong>Julia?</strong></a>)</span> kannst du hier den 1. part schreiben? also die story unserer Regression, bzw hier würde ich gerne deinen Einleitungstext reinnehmen.</p>
+<p>Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.</p>
+</section>
+<section id="sources-of-bias-and-identification" class="level2">
+<h2 class="anchored" data-anchor-id="sources-of-bias-and-identification">Sources of Bias and Identification</h2>
+<p>The connection we are trying to evaluate is hard to isolate cleanly. There are many factors that influence migration decisions in Europe:</p>
+<ul>
+<li>economic opportunities such as potential incomes</li>
+<li>access to healthcare</li>
+<li>access to good education for the children</li>
+<li>social factors such as child support, the access to other family members or a social group of people of similar culture</li>
+<li>political climate in home and destination country</li>
+</ul>
+<p>To isolate the effect of AFD voting results we introduced control variables that should capture the influence of the other factors.</p>
+<p>The control variable “Big Cities” is supposed to capture the greater attentiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.</p>
+<p>The control variable “East Germany” is supposed to capture the different political climate in East Germany compared to West Germany and the worse economic situation inbetween both parts of Germany.</p>
+<p>The control variable “Total Population” is supposed to capture the attractiveness of a region due to an already existing population of migrants which helps with integration and the access to a social group of people of similar culture.</p>
+<p>The control variable “Unemployment” and “Purchase Power” is supposed to capture the economic opportunities in a region.</p>
+<p>The control variable “Healthcare” is supposed to capture the access to healthcare in a region, which is an important factor for migration decisions.</p>
+<p>We assume the overall direction of this bias is positive. Despite including several factors that could influence migration decisions there are still many factors that could influence such a complex choice. We are not able to include all of them in our model. This leads to an overestimation of the effect of AFD voting results on the change of EU migrants.</p>
+<p>Another source of potential bias is the creation of our data set. We assign our federal district data to the voting districts by weighting the data via the share of area of the federal district that is in the voting district. This is just an approximation and differs from the real distribution of the population and migrants. Unfortunately we have no way of removing or isolating this bias. We also don`t know the direction of this bias. It could be positive if the data is distributed in a way that the voting districts with the highest AFD voting results have a higher share of federal district area while in reality having less population. But this could also be reversed.</p>
+</section>
+<section id="formulas" class="level2">
+<h2 class="anchored" data-anchor-id="formulas">Formulas</h2>
+<p><u>Baseline OLS formulas:</u></p>
+<p><em><code>Main outcome variable&lt;- Endogenous variable</code></em></p>
+<p><u>with the following pairings:</u></p>
+<p><strong>1)</strong><br>
+MOV: Percentage change of EU migrants 31.12.2017 compared to 31.12.2016</p>
+<p>EV: Vote results of the AFD on 24.09.2017</p>
+<p><strong>2)</strong><br>
+MOV: Percentage change of EU migrants 31.12.2018 compared to 31.12.2016</p>
+<p>EV: Vote results of the AFD on 24.09.2017</p>
+<p><strong>3)</strong><br>
+MOV: Percentage change of EU migrants 31.12.2021 compared to 31.12.2020</p>
+<p>EV: Vote results of the AFD on 26.09.2021</p>
+<p><strong>4)</strong><br>
+MOV: Percentage change of EU migrants 31.12.2022 compared to 31.12.2020</p>
+<p>EV: Vote results of the AFD on 26.09.2021</p>
+<p><u>OLS formula with control variables:</u></p>
 </section>
 
 </main>
