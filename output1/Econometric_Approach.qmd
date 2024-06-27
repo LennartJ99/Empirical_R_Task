@@ -62,7 +62,7 @@ Another source of potential bias is the creation of our data set. We assign our 
 
 [baseline OLS formulas:]{.underline}
 
-*`main outcome variable<- endogenous variable`*
+*`main outcome variable <- endogenous variable`*
 
 [with the following pairings:]{.underline}
 
@@ -170,6 +170,4 @@ CV:
 
 ## Treatment
 
-We want to identify an effect of voting results of the AFD on the migration decisions of EU foreigners in Germany. We assume that voting districts, that have a higher share of AFD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AFD voting shares leads to more xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AFD voters.
-
-
+We want to identify an effect of voting results of the AFD on the migration decisions of EU foreigners in Germany. We assume that voting districts, that have a higher share of AFD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. We expect this to be either motivated passively: higher AFD voting shares leads to more xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AFD voters.
