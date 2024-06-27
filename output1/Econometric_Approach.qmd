@@ -16,19 +16,29 @@ Flowchart function of the economic model @Julia xenophobia--\> AFD voting result
 
 (schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon)\
 
+```{mermaid}
+%%|label: Flow Chart Empirical Stragegy
+graph TD
+    A[Research Question: How does the AfD vote share affect the migration decisions of EU foreigners in Germany?] --> B[Collect migration data]
+    A --> C[Collect election data]
+    B --> D[Adressing boundary mismatches between county districts and electoral districts using R]
+    C --> D[Choose empirical strategy: Linear Regression]
+    D --> E[Control for potential confounders, e.g. purchasing power, unempoyment rate etc.]
+    E --> F[Analyse AfD vote share's impact on migrating decisions]
+    F --> G Adress biases and limitations
+```
+
 ## Setting
 
-**Endogenous Variable:** Xenophobia which we proxy by using AFD voting results
+**Endogenous Variable:** Xenophobia which we proxy by using AfD election results
 
 **Main Outcome Variable:** The percentage change of the number of EU migrants
 
-Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.
+Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AfD vote share in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.
 
-Because AFD voting results are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AFD voting shares.
+Because AfD vote shares are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AfD vote shares.
 
 ## Mechanism
-
-@Julia kannst du hier den 1. part schreiben? also die story unserer Regression, bzw hier würde ich gerne deinen Einleitungstext reinnehmen.
 
 Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.
 
@@ -42,11 +52,13 @@ The connection we are trying to evaluate is hard to isolate cleanly. There are m
 -   social factors such as child support, the access to other family members or a social group of people of similar culture
 -   political climate in home and destination country
 
-To isolate the effect of AFD voting results we introduced control variables that should capture the influence of the other factors.
+ACHTUNG @LENNART,das können wir so nicht schreiben. Das ist zwar plausibel, aber es steht so nicht in unserer Literatur und wir geben dafür auch keine Quellen an. Wir nehmen an, dass solche Überlegungen naheliegend sind, da wir Quellen haben, die solche Faktoren im HEIMATland untersuchen. (Bildungsstand, Kinder, Soziales Netz, Income etc.).
+
+To isolate the effect of AfD vote shares we introduce control variables that should capture the influence of the other factors.
 
 The control variable "Big Cities" is supposed to capture the impact of greater attentiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.
 
-The control variable "East Germany" is supposed to capture the impact of the differences between east and west Germany such as political climate, mentality and economic opportunities on migration decisions.
+The control variable "East Germany" is supposed to capture the impact of the differences between East and West Germany such as political climate, mentality and economic opportunities.
 
 The control variable "Total amount of migrants" is supposed to capture the impact of the attractiveness of a region due to an already existing population of migrants which helps with integration and the access to a social group of people of similar culture.
 
@@ -54,11 +66,11 @@ The control variable "Unemployment" and "Purchase Power" are supposed to capture
 
 The control variable "Healthcare" is supposed to capture impact of access to healthcare on migration decisions.
 
-We assume the overall direction of this bias is positive. Despite including several factors that could influence migration decisions there are still many factors that still could influence such a complex choice. We have an omitted variable Bias. We are not able to include all of them in our model. This leads to an overestimation of the effect of AFD voting results on the change of EU migrants.
+We assume the overall direction of this bias is positive. Despite including several factors that could influence migration decisions there are still many factors that still could influence such a complex choice. We have an omitted variable bias. We are not able to include all of them in our model. This leads to an overestimation of the effect of AfD voting results on the change of EU migrants.
 
-Another source of potential bias is the creation of our data set. We assign our federal district data to the voting districts by weighting the data via the share of area of the federal district that is in the voting district. This is just an approximation and differs from the real distribution of the population and migrants. Unfortunately we have no way of removing or isolating this bias. We also don\`t know the direction of this bias. It could be positive if the data is distributed in a way that the voting districts with the highest AFD voting results have a higher share of federal district area while in reality having less population. But this could also be reversed.
+Another source of potential bias is the creation of our data set. We assign our federal district data to the voting districts by weighting the data via the share of area of the federal district that is in the voting district. This is just an approximation and differs from the real distribution of the population and migrants. Unfortunately, we have no way of removing or isolating this bias.We also don't know the direction of this bias. It could be positive if the data shows that voting districts with the highest AfD voting results occupy a larger share of the federal district area while actually having a smaller population. However, the reverse could also be true.
 
-## Formulas
+**Formulas**
 
 [baseline OLS formulas:]{.underline}
 
@@ -170,4 +182,8 @@ CV:
 
 ## Treatment
 
+<<<<<<< HEAD
 We want to identify an effect of voting results of the AFD on the migration decisions of EU foreigners in Germany. We assume that voting districts, that have a higher share of AFD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. We expect this to be either motivated passively: higher AFD voting shares leads to more xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AFD voters.
+=======
+We want to identify an effect of vote shares of the AfD on the migration decisions of EU foreigners in Germany. We assume that voting districts, which have a higher share of AfD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AfD vote shares indicates higher xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AfD voters.
+>>>>>>> 1b3474748c1c99abc4eff08a16f8a02701a7dbc9

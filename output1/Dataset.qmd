@@ -8,15 +8,15 @@ echo: false
 warning: false
 ---
 
-The following document is a presentation of the Data that was used for our Research Project as described in Milestone 2. We will give an overview of the used Data, present the sources and discuss the quality of the used Data. Additionally there will be a Scatter plot and a histogram for the main outcome variable (Change of the number of EU migrants per voting district) and the endogenous variable (AFD voting shares per voting district).
+The following document is a description of the data that was used for our research project as described in milestone 2. We will provide an overview of the data we used, present sources and discuss data quality. Additionally, there we provide a scatter plot and a histogram for the main outcome variable (change of the number of EU migrants per voting district) and the endogenous variable (AfD vote share per voting district).
 
-## Endogenous Variable: AFD Voting Shares
+## Endogenous Variable: AfD Vote Shares
 
-We used voting data from the national German elections in the years 2017 and 2021. The data is from the "Bundeswahlleiterin" (Federal Returning Officer), which is responsible for the overview and organisation of the federal voting for the Bundestag. The "Bundeswahlleiterin" is directly appointed by the Federal Ministry of the Interior (<https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html>). Therefor it is data from an official source and accurate. The unit of measurement are the AFD election results of the second vote in percentage points for each voting district.
+We used election data from the national German elections in the years 2017 and 2021. The data is from the "Bundeswahlleiterin" (Federal Returning Officer), which is responsible for the overview and organisation of the federal elections for the Bundestag. The "Bundeswahlleiterin" is directly appointed by the Federal Ministry of the Interior (<https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html>). Due to it coming from an official source, we assume the data to be accurate. The unit of measurement are the AfD election results of the second vote in percentage points for each voting district.
 
 *Link: <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>*
 
-This is the election data of 2021. "Prozent" is the election result from 2021, "VorpProzent" is the election data from the previous election so 2017.
+This is the election data of 2021. "Prozent" is the election result from 2021, "VorpProzent" is the election data from the previous election in 2017.
 
 *Citation: the Federal Returning Officer, Tabelle: Ergebnisse nach Wahlkreisen (flacher Aufbau). <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>*
 
@@ -59,7 +59,7 @@ sum(is.na(Combined_Data$Election2021))
 
 ## Main outcome variable: Change of the number of EU migrants
 
-The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/\_node.html). We used Migration Data from 2016 and 2020 as a Baseline for the elections in the years 2017 and 2021. We then observed the change of Migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in September, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 month and 15 months after the election. Due to the migration data only being accessible for federal units, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the \[Spatial Data\] part.
+The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again, DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore, the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/\_node.html). We used migration data from 2016 and 2020 as a baseline for the elections in the years 2017 and 2021. We then observed the change of migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in september, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 months and 15 months after the election. Due to the migration data only being accessible for federal units, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the \[Spatial Data\] part.
 
 *Link: <https://www-genesis.destatis.de/genesis//online?operation=table&code=12521-0040&bypass=true&levelindex=1&levelid=1719084022304#abreadcrumb>*
 
@@ -149,7 +149,7 @@ print(plot2022)
 
 ### CV1: Big Cities
 
-We label our voting districts if they are part of a big city or not. As a big city we define the top 15 cities in Germany based on population. We chose this differentiation because there is a large gap in population between number 15, Duisburg with 502000 inhabitants and number 16, Bochum with 365000 inhabitants. The data is from DESTATIS. Due to the data being from an official source the quality of the data can be assumed to be good. The unit of measurement is a dummy variable with 1 if the voting district is part of one of the top 15 cities and 0 if not.
+We categorize our voting districts according to whether they are located within a major city. As "Big cities" we define the top 15 cities in Germany based on population. We chose this differentiation because there is a large gap in population between number 15, Duisburg, with 502.000 inhabitants and number 16, Bochum, with 365.000 inhabitants. The data is from DESTATIS. Due to the data being from an official source the quality of the data can be assumed to be good. The unit of measurement is a dummy variable with 1 if the voting district is part of one of the top 15 cities and 0 if not.
 
 *Link: [https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?\\\_\\\_blob=publicationFile](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?__blob=publicationFile){.uri}*
 
@@ -189,7 +189,7 @@ sum(is.na(Combined_Data$East.Germany))
 
 ### CV3: Healthcare
 
-One of our control variables is the access to healthcare for each federal district. To quantify this, we use the number of hospital beds per 1000 inhabitants. The data is from the INKAR database, which is a database for indicators of spatial and urban development (BBSR) in Germany, published by the Federal Institute for research on Building, Urban Affairs and Spatial Development. The data is from an official source and can be assumed to be reliable. The data is only available till 2021, so we used data from the years 2017, 2018 and 2021 and used the 2021 data for both 2021 and 2022. The unit of measurement is the number of hospital beds per 1000 inhabitants. s *Link:<https://www.inkar.de/WizardStart>*
+One of our control variables is the access to healthcare for each federal district. To quantify this, we use the number of hospital beds per 1000 inhabitants. The data is from the INKAR database, which is a database for indicators of spatial and urban development (BBSR) in Germany, published by the Federal Institute for research on Building, Urban Affairs and Spatial Development. The data is from an official source and can be assumed to be reliable. The data is only available till 2021, so we used data from the years 2017, 2018 and 2021 and used the 2021 data for both 2021 and 2022. The unit of measurement is the number of hospital beds per 1000 inhabitants. *Link:<https://www.inkar.de/WizardStart>*
 
 To access the specific data, it is necessary to select "Medizinische und soziale Versorgung", "Medizinische Versorgung" and then "Krankenhausbetten". Afterwards it is necessary to select all federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.
 
@@ -254,7 +254,7 @@ print(HC2019)
 
 ### CV4: Purchase Power
 
-Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per Inhabitant in Euros. That means its a combination of both the income as well as the living costs in the corresponding state.
+Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per inhabitant in euros. That means its a combination of both the income as well as the living costs in the corresponding state.
 
 *Link: <https://www.inkar.de/WizardStart>* To access the specific data, it is necessary to select "Privateinkommen, "Private Schulden" and then "Kaufkraft", select all the federal districts and the years 2017,2018 and 2021. Unfortunately there is no direct link to the dataset.
 
@@ -320,7 +320,7 @@ Our next control variable is the unemployment rate in each state. We use data fr
 
 *Link: <https://www.inkar.de/WizardStart>*
 
-Toa cess the data, it is necessary to select "Absolutzahlen" and then ""Arbeitslosenzahlen", select all the federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.
+To access the data, it is necessary to select "Absolutzahlen" and then ""Arbeitslosenzahlen", select all the federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.
 
 *Citation: BBSR, INKAR Database: Arbeitslosenzahlen. <https://www.inkar.de/WizardStart>*
 
@@ -383,7 +383,7 @@ Our final control variable is the total population of EU migrants before the ele
 
 *Link: <https://www-genesis.destatis.de/genesis//online?operation=table&code=12521-0040&bypass=true&levelindex=1&levelid=1719084022304#abreadcrumb>*
 
-To acces the data that was used, it is necessary to create a free account and select the years 2016 and 2020.
+To access the data that was used, it is necessary to create a free account and select the years 2016 and 2020.
 
 *Citation: DESTATIS. 12521-0040:Ausländer: Kreise, Stichtag, Geschlecht. <https://www-genesis.destatis.de/genesis//online?operation=table&code=12521-0040&bypass=true&levelindex=1&levelid=1719084022304#abreadcrumb>*
 
@@ -427,9 +427,9 @@ print(TotalM2020)
 
 ### Thought Process
 
-The migration data is only accessible on federal level and the voting data only on voting district level. We decided to project the migration data on the voting district level by using spatial data. We determined, how each federal district is divided into the different voting districts by area. The percentage of a federal district, that belongs to a voting district is used to weight the federal data. This way variables, that are only available on federal district level can be assigned to voting districts. For example if 50% of a federal district belongs to a voting district, 50% of the migrants in said district are assigned to the voting district. Because voting districts are usually a part of multiple federal district, this weighted data is added up. The end result is, that we define voting districts by a combination of different partial federal districts, weighted by the area.
+The migration data is only accessible on federal level and the voting data only on voting district level. We decided to project the migration data on the voting district level by using spatial data. We determined how each federal district is divided into the different voting districts by area. The percentage of a federal district, that belongs to a voting district is used to weight the federal data. This way variables, that are only available on federal district level can be assigned to voting districts. For example, if 50% of a federal district belong to a voting district, 50% of the migrants in said district are assigned to the voting district. Because voting districts are usually a part of multiple federal district, this weighted data is added up. The final result is, that we define voting districts as a combination of different partial federal districts, weighted by the area.
 
-By using this method we have to assume that population and migrants are distributed equally across the federal district area. This is a very strong assumption. The main reason for us to think this can be assumed to be true is the structure of the federal and voting data. Our initial assumption is mainly violated by large centers of population that concentrate a lot of population and migrants. Those centers of populations are usually their own federal district and not part of a larger federal district, which includes further rural areas. In those centers of populations the population can be seen as roughly equally distributed. A mixture of rural and urban areas, which would implement a strong Bias into our regression, is not common. If such a mix is happening the influence of the urban centers is not as grave, as those are small urban centers, while the larger ones are their own federal districts. To further strengthen this method, we manually assigned percentages to voting districts that are solely part of large population centers (and thus federal districts), such as Berlin. For example Berlin is a federal district that is divided into 12 voting districts, that differ by size are nearly equal in population. Here we assigned each voting district 1/12 of the federal district population instead of dividing by size. This is possible due to the German law, which states that voting districts have to beroughly equal in size (https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html).
+By using this method we have to assume that population and migrants are distributed equally across the federal district area. This is a very strong assumption. The main reason why this assumption can be assumed to be accurate is the structure of the federal and voting data. Our initial assumption is mainly violated by large centers of population that concentrate a lot of population and migrants. Those centers of populations are usually their own federal district and not part of a larger federal district, which includes further rural areas. In those centers of populations the population can be seen as roughly equally distributed. A mixture of rural and urban areas, which would implement a strong bias into our regression, is not common. If such a mix occurs, the influence of the urban centers is not as grave, as they are small urban centers, while the larger ones are their own federal districts. To further strengthen this method, we manually assigned percentages to voting districts that are solely part of large population centers (and thus federal districts), such as Berlin. For example Berlin is a federal district that is divided into 12 voting districts, that differ by size but are nearly equal in population. Here we assigned each voting district 1/12 of the federal district population instead of dividing by size. This is possible due to the German law, which states that voting districts have to be roughly equal in size (https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html).
 
 ### Programming Process
 
@@ -441,9 +441,9 @@ The following process was used to combine both datasets.
 
 3.  Use the st_area command to calculate each voting district and federal district intersection.
 
-4.  We now determine how much of each federal voting district belongs to a specific voting district (f.e. 50% of federal district 1 belongs to voting district 1 and 50% to voting district 2). This is used to weigh our data and assign the federal district data to the voting district data. Each voting district is now a combination of each federal district that belongs to it.
+4.  We now determine how much of each federal voting district belongs to a specific voting district (f.e. 50% of federal district 1 belong to voting district 1 and 50% to voting district 2). This is used to weight our data and assign the federal district data to the voting district data. Each voting district is now a combination of each federal district that belongs to it.
 
-5.  We eliminated dependencies in the dataset that existed in the spatial data but not in reality. We determined by Trial and Error that 3% is a good treshhold. That means, if less then 3% of a federal district belongs to a certain voting district the dependency is eliminated. We assume this faulty dependencies are due to the spatial data not being entirely accurate.
+5.  We eliminated dependencies in the dataset that existed in the spatial data but not in reality. We determined by trial and error that 3% is a good threshold. That means, if less then 3% of a federal district belong to a certain voting district, the dependency is eliminated. We assume this faulty dependencies are due to the spatial data not being entirely accurate.
 
 ### Voting districts data
 
