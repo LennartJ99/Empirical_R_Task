@@ -16,18 +16,6 @@ Flowchart function of the economic model @Julia xenophobia--\> AFD voting result
 
 (schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon)\
 
-## Setting
-
-**Endogenous Variable:** Xenophobia which we proxy by using AFD voting results
-
-**Main Outcome Variable:** The percentage change of the number of EU migrants
-
-Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.
-
-Because AFD voting results are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AFD voting shares.
-
-## Mechanism
-
 ```{mermaid}
 %%|label: Flow Chart Empirical Stragegy
 graph TD
@@ -39,6 +27,18 @@ graph TD
     E --> F[Analyse AfD vote share's impact on migrating decisions]
     F --> G Adress biases and limitations
 ```
+
+## Setting
+
+**Endogenous Variable:** Xenophobia which we proxy by using AFD voting results
+
+**Main Outcome Variable:** The percentage change of the number of EU migrants
+
+Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AFD voting results in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.
+
+Because AFD voting results are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AFD voting shares.
+
+## Mechanism
 
 Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.
 
