@@ -23,7 +23,7 @@ graph TD
     A --> C[Collect election data]
     B --> D[Adressing boundary mismatches between county districts and electoral districts using R]
     C --> D[Choose empirical strategy: Linear Regression]
-    D --> E[Control for potential confounders, e.g. purchasing power, unempoyment rate etc.]
+    D --> E[Control for potential confounders, e.g. purchasing power, unemployment rate etc.]
     E --> F[Analyse AfD vote share's impact on migrating decisions]
     F --> G Adress biases and limitations
 ```
