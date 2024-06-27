@@ -1,0 +1,76 @@
+---
+title: "Regression Results"
+format: html
+editor: visual
+author: "Lennart Joop and Julia Daetz"
+bibliography: references.bib
+echo: false
+warning: false
+---
+
+The following document is used to present the regression results of our work in accordance to milestone 4 "Results".
+
+## Regression Tables
+
+### OLS Regression without control variables
+
+```{r,include=FALSE}
+library(here)
+library(jtools)
+library(kableExtra)
+
+source(here("output1","Master_Script.R"))
+source(here("output1","Regression.R"))
+```
+
+[**case 1**]{.underline}
+
+```{r}
+print(summ((lm(data=simple.lm.per1,DiffTotal2017~Election2017))))
+```
+
+[**case 2**]{.underline}
+
+```{r}
+
+print(summ((lm(data=simple.lm.per2,DiffTotal2018~Election2017))))
+```
+
+[**case 3**]{.underline}
+
+```{r}
+
+print(summ((lm(data=simple.lm.per3,DiffTotal2021~Election2021))))
+```
+
+[**case 4**]{.underline}
+
+```{r}
+
+print(summ((lm(data=simple.lm.per4,DiffTotal2022~Election2021))))
+```
+
+### OLS Regression with control variables
+
+[**case 1**]{.underline}
+
+```{r}
+print(summ((lm(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germany+Total2016+Unemployment2017+PurchasePower2017+KH2017))))
+```
+
+[**case 2**]{.underline}
+```{r}
+print(summ((lm(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018))))
+```
+
+[**case 3**]{.underline}
+
+```{r}
+print(summ((lm(data=simple.lm.per3,DiffTotal2021~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021))))
+```
+
+[**case 4**]{.underline}
+
+```{r}
+print(summ((lm(data=simple.lm.per4,DiffTotal2022~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021))))
+```

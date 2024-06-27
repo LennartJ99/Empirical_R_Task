@@ -12,20 +12,19 @@ This document presents the econometric approach we used in our research project,
 
 ## Economic Model
 
-Flowchart function of the economic model @Julia xenophobia--\> AFD voting results --\> impact on EU Migrants
-
-(schau dir die remarks bei dem punkt an, migrations entscheidungen werden durch viele dinge beeinflusst, AFD ergebnisse (also xenophobia ) eins davon)\
-
 ```{mermaid}
-%%|label: Flow Chart Empirical Stragegy
+%%|fig-cap: Flow Chart Empirical Strategy
+%%{init: {"theme":"base", "themeVariables": {"background": "white"}}}%%
 graph TD
     A[Research Question: How does the AfD vote share affect the migration decisions of EU foreigners in Germany?] --> B[Collect migration data]
     A --> C[Collect election data]
-    B --> D[Adressing boundary mismatches between county districts and electoral districts using R]
-    C --> D[Choose empirical strategy: Linear Regression]
-    D --> E[Control for potential confounders, e.g. purchasing power, unemployment rate etc.]
-    E --> F[Analyse AfD vote share's impact on migrating decisions]
-    F --> G Adress biases and limitations
+    B --> D[Address boundary mismatches between county districts and electoral districts using R]
+    C --> D
+    D --> E[Choose empirical strategy: Linear Regression]
+    E --> F[Control for potential confounders, e.g. purchasing power, unemployment rate etc.]
+    F --> G[Analyse AfD vote share's impact on migration decisions]
+    G --> H[Address biases and limitations]
+
 ```
 
 ## Setting
@@ -182,8 +181,4 @@ CV:
 
 ## Treatment
 
-<<<<<<< HEAD
-We want to identify an effect of voting results of the AFD on the migration decisions of EU foreigners in Germany. We assume that voting districts, that have a higher share of AFD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. We expect this to be either motivated passively: higher AFD voting shares leads to more xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AFD voters.
-=======
 We want to identify an effect of vote shares of the AfD on the migration decisions of EU foreigners in Germany. We assume that voting districts, which have a higher share of AfD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AfD vote shares indicates higher xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AfD voters.
->>>>>>> 1b3474748c1c99abc4eff08a16f8a02701a7dbc9

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lennart Joop and Julia Daetz">
 
-<title>Econometric Approach</title>
+<title>Regression Results</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,19 +24,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Econometric_Approach_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Econometric_Approach_files/libs/quarto-html/quarto.js"></script>
-<script src="Econometric_Approach_files/libs/quarto-html/popper.min.js"></script>
-<script src="Econometric_Approach_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Econometric_Approach_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Econometric_Approach_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Econometric_Approach_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Econometric_Approach_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Econometric_Approach_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Econometric_Approach_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="Econometric_Approach_files/libs/quarto-diagram/mermaid.min.js"></script>
-<script src="Econometric_Approach_files/libs/quarto-diagram/mermaid-init.js"></script>
-<link href="Econometric_Approach_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="Regression Results_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Regression Results_files/libs/quarto-html/quarto.js"></script>
+<script src="Regression Results_files/libs/quarto-html/popper.min.js"></script>
+<script src="Regression Results_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Regression Results_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Regression Results_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Regression Results_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Regression Results_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Regression Results_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Regression Results_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -49,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Econometric Approach</h1>
+<h1 class="title">Regression Results</h1>
 </div>
 
 
@@ -72,133 +69,215 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This document presents the econometric approach we used in our research project, as described in Milestone 3.</p>
-<section id="economic-model" class="level2">
-<h2 class="anchored" data-anchor-id="economic-model">Economic Model</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {"theme":"base", "themeVariables": {"background": "white"}}}%%
-graph TD
-    A[Research Question: How does the AfD vote share affect the migration decisions of EU foreigners in Germany?] --&gt; B[Collect migration data]
-    A --&gt; C[Collect election data]
-    B --&gt; D[Address boundary mismatches between county districts and electoral districts using R]
-    C --&gt; D
-    D --&gt; E[Choose empirical strategy: Linear Regression]
-    E --&gt; F[Control for potential confounders, e.g. purchasing power, unemployment rate etc.]
-    F --&gt; G[Analyse AfD vote share's impact on migration decisions]
-    G --&gt; H[Address biases and limitations]
+<p>The following document is used to present the regression results of our work in accordance to milestone 4 “Results”.</p>
+<section id="regression-tables" class="level2">
+<h2 class="anchored" data-anchor-id="regression-tables">Regression Tables</h2>
+<section id="ols-regression-without-control-variables" class="level3">
+<h3 class="anchored" data-anchor-id="ols-regression-without-control-variables">OLS Regression without control variables</h3>
+<p><u><strong>case 1</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 292 (7 missing obs. deleted)
+Dependent Variable: DiffTotal2017
+Type: OLS linear regression 
 
-</pre>
+MODEL FIT:
+F(1,290) = 2.59, p = 0.11
+R² = 0.01
+Adj. R² = 0.01 
+
+Standard errors: OLS
+------------------------------------------------
+                     Est.   S.E.   t val.      p
+------------------ ------ ------ -------- ------
+(Intercept)          5.79   3.67     1.58   0.12
+Election2017         0.43   0.26     1.61   0.11
+------------------------------------------------</code></pre>
 </div>
-<p></p><figcaption> Flow Chart Empirical Strategy</figcaption> </figure><p></p>
 </div>
+<p><u><strong>case 2</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 292 (7 missing obs. deleted)
+Dependent Variable: DiffTotal2018
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,290) = 47.23, p = 0.00
+R² = 0.14
+Adj. R² = 0.14 
+
+Standard errors: OLS
+------------------------------------------------
+                     Est.   S.E.   t val.      p
+------------------ ------ ------ -------- ------
+(Intercept)          2.40   2.02     1.19   0.24
+Election2017         1.00   0.15     6.87   0.00
+------------------------------------------------</code></pre>
+</div>
+</div>
+<p><u><strong>case 3</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 288 (11 missing obs. deleted)
+Dependent Variable: DiffTotal2021
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,286) = 109.82, p = 0.00
+R² = 0.28
+Adj. R² = 0.27 
+
+Standard errors: OLS
+-------------------------------------------------
+                      Est.   S.E.   t val.      p
+------------------ ------- ------ -------- ------
+(Intercept)          -0.59   0.38    -1.56   0.12
+Election2021          0.34   0.03    10.48   0.00
+-------------------------------------------------</code></pre>
+</div>
+</div>
+<p><u><strong>case 4</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 288 (11 missing obs. deleted)
+Dependent Variable: DiffTotal2022
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,286) = 168.19, p = 0.00
+R² = 0.37
+Adj. R² = 0.37 
+
+Standard errors: OLS
+-------------------------------------------------
+                      Est.   S.E.   t val.      p
+------------------ ------- ------ -------- ------
+(Intercept)          -1.95   0.65    -2.98   0.00
+Election2021          0.71   0.06    12.97   0.00
+-------------------------------------------------</code></pre>
 </div>
 </div>
 </section>
-<section id="setting" class="level2">
-<h2 class="anchored" data-anchor-id="setting">Setting</h2>
-<p><strong>Endogenous Variable:</strong> Xenophobia which we proxy by using AfD election results</p>
-<p><strong>Main Outcome Variable:</strong> The percentage change of the number of EU migrants</p>
-<p>Our observation units are 299 German voting districts. We run four different regressions in four years. We want to find the impact of AfD vote share in the elections 2017 and 2021 on the change of EU migrants 3 months and 15 months after the election.</p>
-<p>Because AfD vote shares are non-binary, we observe a treatment intensity instead of a treatment effect. Each unit of observation has a different treatment intensity which is based on the AfD vote shares.</p>
+<section id="ols-regression-with-control-variables" class="level3">
+<h3 class="anchored" data-anchor-id="ols-regression-with-control-variables">OLS Regression with control variables</h3>
+<p><u><strong>case 1</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 292 (7 missing obs. deleted)
+Dependent Variable: DiffTotal2017
+Type: OLS linear regression 
+
+MODEL FIT:
+F(7,284) = 120.02, p = 0.00
+R² = 0.75
+Adj. R² = 0.74 
+
+Standard errors: OLS
+--------------------------------------------------------
+                            Est.    S.E.   t val.      p
+----------------------- -------- ------- -------- ------
+(Intercept)                33.70   14.83     2.27   0.02
+Election2017                0.67    0.24     2.83   0.01
+Big.City                   86.98    3.47    25.06   0.00
+East.Germany              -15.31    3.62    -4.23   0.00
+Total2016                  -0.00    0.00    -0.72   0.48
+Unemployment2017            0.72    0.39     1.83   0.07
+PurchasePower2017          -0.00    0.00    -2.35   0.02
+KH2017                     -0.84    0.40    -2.08   0.04
+--------------------------------------------------------</code></pre>
+</div>
+</div>
+<p><u><strong>case 2</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 292 (7 missing obs. deleted)
+Dependent Variable: DiffTotal2018
+Type: OLS linear regression 
+
+MODEL FIT:
+F(7,284) = 81.42, p = 0.00
+R² = 0.67
+Adj. R² = 0.66 
+
+Standard errors: OLS
+------------------------------------------------------
+                           Est.   S.E.   t val.      p
+----------------------- ------- ------ -------- ------
+(Intercept)               54.58   9.89     5.52   0.00
+Election2017               0.75   0.16     4.69   0.00
+Big.City                  41.45   2.34    17.74   0.00
+East.Germany              -5.53   2.45    -2.26   0.02
+Total2016                 -0.00   0.00    -2.46   0.01
+Unemployment2018          -0.47   0.28    -1.67   0.10
+PurchasePower2018         -0.00   0.00    -4.74   0.00
+KH2018                    -0.60   0.27    -2.16   0.03
+------------------------------------------------------</code></pre>
+</div>
+</div>
+<p><u><strong>case 3</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 288 (11 missing obs. deleted)
+Dependent Variable: DiffTotal2021
+Type: OLS linear regression 
+
+MODEL FIT:
+F(7,280) = 35.65, p = 0.00
+R² = 0.47
+Adj. R² = 0.46 
+
+Standard errors: OLS
+------------------------------------------------------
+                           Est.   S.E.   t val.      p
+----------------------- ------- ------ -------- ------
+(Intercept)               14.69   3.20     4.58   0.00
+Election2021               0.03   0.05     0.60   0.55
+Big.City                  -0.19   0.78    -0.24   0.81
+East.Germany               3.70   0.84     4.40   0.00
+Total2020                 -0.00   0.00    -3.49   0.00
+Unemployment2021          -0.58   0.09    -6.76   0.00
+PurchasePower2021         -0.00   0.00    -3.03   0.00
+KH2021                     0.05   0.09     0.60   0.55
+------------------------------------------------------</code></pre>
+</div>
+</div>
+<p><u><strong>case 4</strong></u></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL INFO:
+Observations: 288 (11 missing obs. deleted)
+Dependent Variable: DiffTotal2022
+Type: OLS linear regression 
+
+MODEL FIT:
+F(7,280) = 41.72, p = 0.00
+R² = 0.51
+Adj. R² = 0.50 
+
+Standard errors: OLS
+------------------------------------------------------
+                           Est.   S.E.   t val.      p
+----------------------- ------- ------ -------- ------
+(Intercept)               23.89   5.65     4.23   0.00
+Election2021               0.17   0.10     1.76   0.08
+Big.City                  -1.31   1.37    -0.95   0.34
+East.Germany               6.83   1.49     4.60   0.00
+Total2020                 -0.00   0.00    -2.91   0.00
+Unemployment2021          -0.72   0.15    -4.78   0.00
+PurchasePower2021         -0.00   0.00    -3.25   0.00
+KH2021                     0.14   0.15     0.93   0.35
+------------------------------------------------------</code></pre>
+</div>
+</div>
 </section>
-<section id="mechanism" class="level2">
-<h2 class="anchored" data-anchor-id="mechanism">Mechanism</h2>
-<p>Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.</p>
-</section>
-<section id="sources-of-bias-and-identification" class="level2">
-<h2 class="anchored" data-anchor-id="sources-of-bias-and-identification">Sources of Bias and Identification</h2>
-<p>The connection we are trying to evaluate is hard to isolate cleanly. There are many factors that influence migration decisions in Europe:</p>
-<ul>
-<li>economic opportunities such as potential incomes</li>
-<li>access to healthcare</li>
-<li>access to good education for the children</li>
-<li>social factors such as child support, the access to other family members or a social group of people of similar culture</li>
-<li>political climate in home and destination country</li>
-</ul>
-<p>ACHTUNG <span class="citation" data-cites="LENNART">(<a href="#ref-LENNART" role="doc-biblioref"><strong>LENNART?</strong></a>)</span>,das können wir so nicht schreiben. Das ist zwar plausibel, aber es steht so nicht in unserer Literatur und wir geben dafür auch keine Quellen an. Wir nehmen an, dass solche Überlegungen naheliegend sind, da wir Quellen haben, die solche Faktoren im HEIMATland untersuchen. (Bildungsstand, Kinder, Soziales Netz, Income etc.).</p>
-<p>To isolate the effect of AfD vote shares we introduce control variables that should capture the influence of the other factors.</p>
-<p>The control variable “Big Cities” is supposed to capture the impact of greater attentiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.</p>
-<p>The control variable “East Germany” is supposed to capture the impact of the differences between East and West Germany such as political climate, mentality and economic opportunities.</p>
-<p>The control variable “Total amount of migrants” is supposed to capture the impact of the attractiveness of a region due to an already existing population of migrants which helps with integration and the access to a social group of people of similar culture.</p>
-<p>The control variable “Unemployment” and “Purchase Power” are supposed to capture the impact of economic influences on migration decisions.</p>
-<p>The control variable “Healthcare” is supposed to capture impact of access to healthcare on migration decisions.</p>
-<p>We assume the overall direction of this bias is positive. Despite including several factors that could influence migration decisions there are still many factors that still could influence such a complex choice. We have an omitted variable bias. We are not able to include all of them in our model. This leads to an overestimation of the effect of AfD voting results on the change of EU migrants.</p>
-<p>Another source of potential bias is the creation of our data set. We assign our federal district data to the voting districts by weighting the data via the share of area of the federal district that is in the voting district. This is just an approximation and differs from the real distribution of the population and migrants. Unfortunately, we have no way of removing or isolating this bias.We also don’t know the direction of this bias. It could be positive if the data shows that voting districts with the highest AfD voting results occupy a larger share of the federal district area while actually having a smaller population. However, the reverse could also be true.</p>
-<p><strong>Formulas</strong></p>
-<p><u>baseline OLS formulas:</u></p>
-<p><em><code>main outcome variable &lt;- endogenous variable</code></em></p>
-<p><u>with the following pairings:</u></p>
-<p><strong>1)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2017 compared to 31.12.2016</p>
-<p>EV: Vote results of the AFD on 24.09.2017</p>
-<p><strong>2)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2018 compared to 31.12.2016</p>
-<p>EV: Vote results of the AFD on 24.09.2017</p>
-<p><strong>3)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2021 compared to 31.12.2020</p>
-<p>EV: Vote results of the AFD on 26.09.2021</p>
-<p><strong>4)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2022 compared to 31.12.2020</p>
-<p>EV: Vote results of the AFD on 26.09.2021</p>
-<p><u>OLS formula with control variables:</u></p>
-<p><code>main outcome variable &lt;- endogenous variable + control variables</code></p>
-<p><u>with the following pairings:</u></p>
-<p><strong>1)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2017 compared to 31.12.2016</p>
-<p>EV: Vote results of the AFD on 24.09.2017</p>
-<p>CV:</p>
-<ul>
-<li><p>Dummy variable Big Cities (time indifferent)</p></li>
-<li><p>Dummy variable East Germany (time indifferent)</p></li>
-<li><p>Total amount of migrants on 31.12.2016</p></li>
-<li><p>Unemployment rate on 31.12.2017</p></li>
-<li><p>Average purchasing power on 31.12.2017</p></li>
-<li><p>Access to hospital beds per 1000 inhabitants on 31.12.2017</p></li>
-</ul>
-<p><strong>2)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2018 compared to 31.12.2016</p>
-<p>EV: Vote results of the AFD on 24.09.2017</p>
-<p>CV:</p>
-<ul>
-<li><p>Dummy variable Big Cities (time indifferent)</p></li>
-<li><p>Dummy variable East Germany (time indifferent)</p></li>
-<li><p>Total amount of migrants on 31.12.2017</p></li>
-<li><p>Unemployment rate on 31.12.2018</p></li>
-<li><p>Average purchasing power on 31.12.2018</p></li>
-<li><p>Access to hospital beds per 1000 inhabitants on 31.12.2018</p></li>
-</ul>
-<p><strong>3)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2021 compared to 31.12.2020</p>
-<p>EV: Vote results of the AFD on 26.09.2021</p>
-<p>CV:</p>
-<ul>
-<li><p>Dummy variable Big Cities (time indifferent)</p></li>
-<li><p>Dummy variable East Germany (time indifferent)</p></li>
-<li><p>Total amount of migrants on 31.12.2020</p></li>
-<li><p>Unemployment rate on 31.12.2021</p></li>
-<li><p>Average purchasing power on 31.12.2021</p></li>
-<li><p>Access to hospital beds per 1000 inhabitants on 31.12.2021</p></li>
-</ul>
-<p><strong>4)</strong><br>
-MOV: Percentage change of EU migrants 31.12.2022 compared to 31.12.2020</p>
-<p>EV: Vote results of the AFD on 26.09.2021</p>
-<p>CV:</p>
-<ul>
-<li><p>Dummy variable Big Cities (time indifferent)</p></li>
-<li><p>Dummy variable East Germany (time indifferent)</p></li>
-<li><p>Total amount of migrants on 31.12.2020</p></li>
-<li><p>Unemployment rate on 31.12.2021</p></li>
-<li><p>Average purchasing power on 31.12.2021</p></li>
-<li><p>Access to hospital beds per 1000 inhabitants on 31.12.2021</p></li>
-</ul>
-</section>
-<section id="treatment" class="level2">
-<h2 class="anchored" data-anchor-id="treatment">Treatment</h2>
-<p>We want to identify an effect of vote shares of the AfD on the migration decisions of EU foreigners in Germany. We assume that voting districts, which have a higher share of AfD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AfD vote shares indicates higher xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AfD voters.</p>
 </section>
 
 </main>
