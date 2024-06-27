@@ -30,6 +30,8 @@ Because AFD voting results are non-binary, we observe a treatment intensity inst
 
 @Julia kannst du hier den 1. part schreiben? also die story unserer Regression, bzw hier würde ich gerne deinen Einleitungstext reinnehmen.
 
+xyc
+
 Due to our analysis being a simple regression, it is possible to test direct relationships between endogenous and main outcome variable. We plan on running simple regressions that just show the relation between our two main variables, reverse regressions to test for reverse causalities and simple regressions between our control variables and the main outcome variable.
 
 ## Sources of Bias and Identification
@@ -171,5 +173,3 @@ CV:
 ## Treatment
 
 We want to identify an effect of voting results of the AFD on the migration decisions of EU foreigners in Germany. We assume that voting districts, that have a higher share of AFD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AFD voting shares leads to more xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AFD voters.
-
-
