@@ -59,6 +59,7 @@ print(summ((lm(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germ
 ```
 
 [**case 2**]{.underline}
+
 ```{r}
 print(summ((lm(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018))))
 ```
