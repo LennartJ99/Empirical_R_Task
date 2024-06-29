@@ -55,7 +55,7 @@ ACHTUNG @LENNART,das können wir so nicht schreiben. Das ist zwar plausibel, abe
 
 To isolate the effect of AfD vote shares we introduce control variables that should capture the influence of the other factors.
 
-The control variable "Big Cities" is supposed to capture the impact of greater attentiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.
+The control variable "Big Cities" is supposed to capture the impact of greater attractiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.
 
 The control variable "East Germany" is supposed to capture the impact of the differences between East and West Germany such as political climate, mentality and economic opportunities.
 
@@ -181,4 +181,4 @@ CV:
 
 ## Treatment
 
-We want to identify an effect of vote shares of the AfD on the migration decisions of EU foreigners in Germany. We assume that voting districts, which have a higher share of AfD voters, are more xenophobic. This xenophobia should lead to a decrease in the number of EU migrants in the following years. This decrease should either be motivated passively: higher AfD vote shares indicates higher xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AfD voters.
+We want to identify an effect of vote shares of the AfD on the migration decisions of EU foreigners in Germany. We assume that voting districts, which have a higher share of AfD voters, are more xenophobic. This xenophobia could lead to a decrease in the number of EU migrants in the following years. This decrease could either be motivated passively: higher AfD vote shares indicates higher xenophobia which decreases the live quality of EU foreigners, or actively: EU migrants inform themselves about the elections and choose not to live in regions with high shares of AfD voters.

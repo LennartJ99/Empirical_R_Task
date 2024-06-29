@@ -59,6 +59,7 @@ print(summ((lm(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germ
 ```
 
 [**case 2**]{.underline}
+
 ```{r}
 print(summ((lm(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018))))
 ```
@@ -74,6 +75,9 @@ print(summ((lm(data=simple.lm.per3,DiffTotal2021~Election2021+Big.City+East.Germ
 ```{r}
 print(summ((lm(data=simple.lm.per4,DiffTotal2022~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021))))
 ```
+<<<<<<< HEAD
 
 ## Interpretation
 
+=======
+>>>>>>> 95a396321c6d01c9a4b4cc66344e6d5952414a37
