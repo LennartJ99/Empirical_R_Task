@@ -34,6 +34,8 @@ However, there is a notable absence of literature on the effect of previously no
 
 ## Conclusion
 
+[Regression Resulus](./Regression_Results.html)
+
 ## Bibliography
 
 Arzheimer, Kai, and Carl C. Berning. "How the Alternative for Germany (AfD) and their voters veered to the radical right, 2013–2017." *Electoral Studies* 60 (2019): 102040.

@@ -470,5 +470,3 @@ To access federal district spatial data, we used data provided by the Federal Ag
 This link provides data for different organisational units. To access the spatial federal district data, it is necessary to select the files with the name "VG250_KRS".
 
 *Citation: Federal Agency for Cartography and Geodesy, Verwaltungsgebiete 1:250 000 Stand 01.01. (VG250 01.01.). <https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip>*
-
-## References
