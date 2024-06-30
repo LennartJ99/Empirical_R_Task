@@ -23,16 +23,15 @@ source(here("output1","Regression.R"))
 
 ```{r}
 etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017),
-       feols(data=simple.lm.per3,DiffTotal2021~Election2017),
-       feols(data=simple.lm.per4,DiffTotal2022~Election2017),
+       feols(data=simple.lm.per3,DiffTotal2021~Election2021),
+       feols(data=simple.lm.per4,DiffTotal2022~Election2021),
 digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2", "case 3", "case 4" ))
 ```
 
 ## Result description
 
-All our result are positive, ranging in between 0.34 and 1. This indicates that higher AFD results actually lead to an percentage increase in EU migrants. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AFD alone are not enough to explain the change of EU migrants.
+All our result are positive, ranging in between 0.34 and 1. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant, for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AFD alone are not enough to explain the change of EU migrants.
 
-The direction of the results is different then we would have thought. We assumed, that higher AFD voting results (as a proxy for xenophobia), leads to a decrease in the percentage change of EU migrants. Instead our regressions results show the opposite.
 
 ### OLS Regression with control variables 
 
@@ -49,7 +48,7 @@ digits="r3", fitstat=c('n','ar2'), headers=c("case 3","case 4") )
 
 ## Result description
 
-After including control variables, our regression
+After including control variables, our regression results are still positive, varying between 0.03 for case 3 and 0.752 for case 2. The  The introduction of control variables also increases our explanation power significantly, especially in the 2017 election. The R2 increases to 0,74 and 0,66 for case 1 and 2, and only slightly increases for case 3 and 4 to 0.46 and 0.50 respectively. Similar to the regression without control variables, the estimator increases in the 15 month period compared to the 3 month period. Again the result is 
 
 
 ## Conclusion and 
