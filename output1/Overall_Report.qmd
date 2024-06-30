@@ -10,8 +10,6 @@ bibliography: references.bib
 
 Existing research on migration decisions mainly focusses on migrants' personal factors and conditions in their countries of origin. However, the conditions in potential destination countries, including societal attitudes towards immigrants, have been less explored. This study addresses this gap by examining how a country's welcoming culture influences migration decisions of foreigners. To find a suitable proxy for a country's welcoming culture, we look at the recent election results of parties known for their strong views on immigration. In the most recent European elections, the populist and far-right party Alternative for Germany (AfD), emerged as the second strongest party in Germany, significantly ahead of the Green Party, which distinguishes itself greatly from the AfD through its progressive stance on the migration debate. Known for its negative attitudes toward migration, the AfD's 2017 election program, for example, was highly critical of multiculturalism, arguing for the preservation of the 'German Leitkultur' and against the acceptance of refugees. Conversely to previous research, that has already shown a positive relationship between the number of immigrants and increased support for right-wing parties, this study aims to analyze whether the strength of right-wing parties influences migrants' choice of destination. Specifically, it aims to answer the following question: How does the AfD vote share affect the migration decisions of EU foreigners in Germany? To do so, we perform a linear regression analysis using AfD election results from the 2017 and 2021 German federal elections at the district level, as well as data on changes in EU migration from the Federal Statistical Office. While it was initially understood as soft eurosceptic and socially conservative party (Arzheimer et. al, 2019) when founded in 2013, the AfD shifted its focus to immigration issues following the 2015 refugee crisis. We therefore find it reasonable to use post-2015 election results to ensure their vote shares being accurate proxies for xenophobia. Furthermore, socioeconomic data such as purchasing power, unemployment rate, and urbanity are used to ensure the study’s robustness.
 
-Arzheimer, Kai, and Carl C. Berning. "How the Alternative for Germany (AfD) and their voters veered to the radical right, 2013–2017." *Electoral Studies* 60 (2019): 102040.
-
 ## Lierature Review
 
 While the impact of the election results of anti-immigrant parties on the destination choices of foreigners is still largely unknown, the reverse has been researched. Otto and Steinhardt (2014) analyzed electoral data from 103 districts in Hamburg between 1987 and 1998 and found a significant positive relationship between the increasing concentration of foreigners and votes for xenophobic, extreme right-wing parties.
@@ -23,3 +21,23 @@ Friebel, Gallego, and Mendola (2013) approached migration intentions from the pe
 However, there is a notable absence of literature on the effect of previously non-violent indicators of xenophobia on migration decisions of foreigners, which this study aims to address by using AfD election results. Unlike previous studies that assume physical violence precedes migration as an explanatory variable, this research emphasizes the general political climate in the destination country. Understanding the relationship between xenophobia – or the political climate in general – and the destination choices of foreigners might be essential for policymakers in making informed decisions regarding immigration policies and integration strategies.
 
 ## Data
+
+## Econometric Approach
+
+## Regression Results
+
+## Conclusion
+
+## Bibliography
+
+Arzheimer, Kai, and Carl C. Berning. "How the Alternative for Germany (AfD) and their voters veered to the radical right, 2013–2017." *Electoral Studies* 60 (2019): 102040.
+
+Friebel, Guido, Juan Miguel Gallego, and Mariapia Mendola. "Xenophobic attacks, migration intentions, and networks: evidence from the South of Africa." Journal of Population Economics 26 (2013): 555-591.
+
+Otrachshenko, Vladimir, and Olga Popova. "Life (dis) satisfaction and the intention to migrate: Evidence from Central and Eastern Europe." The Journal of Socio-Economics 48 (2014): 40-49.
+
+Otto, Alkis Henri, and Max Friedrich Steinhardt. "Immigration and election outcomes—Evidence from city districts in Hamburg." Regional Science and Urban Economics 45 (2014): 67-79.
+
+Steinhardt, Max Friedrich. "The impact of xenophobic violence on the integration of immigrants." (2018).
+
+Williams, Allan M., et al. "The migration intentions of young adults in Europe: A comparative, multilevel analysis." Population, Space and Place 24.1 (2018): e2123.
