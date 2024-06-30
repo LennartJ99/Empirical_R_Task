@@ -1,5 +1,18 @@
-###Basic Regression without Control Variables and Total Migration Differential Numbers
+
 library(jtools)
+### Create 4 datasets with the percentage increase of migration in 2017, 2018, 2021, and 2022
+###instead of the total migration numbers.
+
+simple.lm.per1<-Combined_Data%>%
+  mutate(DiffTotal2017=DiffTotal2017/Total2016*100)
+simple.lm.per2<-Combined_Data%>%
+  mutate(DiffTotal2018=DiffTotal2018/Total2016*100)
+simple.lm.per3<-Combined_Data%>%
+  mutate(DiffTotal2021=DiffTotal2021/Total2020*100)
+simple.lm.per4<-Combined_Data%>%
+  mutate(DiffTotal2022=DiffTotal2022/Total2020*100)
+
+###Basic Regression without Control Variables and Total Migration Differential Numbers
 simple.lm.tot1<-summ(lm(data=Combined_Data, DiffTotal2017~Election2017))
 
 simple.lm.tot2<-summ(lm(data=Combined_Data, DiffTotal2018~Election2017))
@@ -14,20 +27,16 @@ print(simple.lm.tot3)
 print(simple.lm.tot4)
 
 ###Basic Regression without Control Variables and Migration Differential in Percentage
-simple.lm.per1<-Combined_Data%>%
-  mutate(DiffTotal2017=DiffTotal2017/Total2016*100)
+
 simple.lm.per.11<-summ(lm(data=simple.lm.per1,DiffTotal2017~Election2017))
 
-simple.lm.per2<-Combined_Data%>%
-  mutate(DiffTotal2018=DiffTotal2018/Total2016*100)
+
 simple.lm.per.22<-summ(lm(data=simple.lm.per2,DiffTotal2018~Election2017))
 
-simple.lm.per3<-Combined_Data%>%
-  mutate(DiffTotal2021=DiffTotal2021/Total2020*100)
+
 simple.lm.per.33<-summ(lm(data=simple.lm.per3,DiffTotal2021~Election2021))
 
-simple.lm.per4<-Combined_Data%>%
-  mutate(DiffTotal2022=DiffTotal2022/Total2020*100)
+
 simple.lm.per.44<-summ(lm(data=simple.lm.per4,DiffTotal2022~Election2021))
 
 print(simple.lm.per.11)
