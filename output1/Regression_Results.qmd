@@ -65,7 +65,7 @@ On the other hand, the positive estimator for unemployment in case 1 and the neg
 
 Our last control variable, the number of hospital beds per 1000 inhabitants, being an indicator for access to healthcare in one region, also shows mixed estimators. This does not follow our intuition, since we expected access to healthcare and therefore better quality of living to have pulling effects on migrants.
 
-These findings pose the question, why our initial theory - the relationship between AfD election results, our control variables and EU migrant movements inside Germany differs from our regression results. There are multiple possible explanations:
+These findings pose the question, why our initial theory - the relationship between AfD election results, our control variables and EU migrant movements inside Germany - differs from our regression results. There are multiple possible explanations:
 
 **Explanation A):**
 
