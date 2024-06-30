@@ -43,17 +43,7 @@ Due to our analysis being a simple regression, it is possible to test direct rel
 
 ## Sources of Bias and Identification
 
-The connection we are trying to evaluate is hard to isolate cleanly. There are many factors that influence migration decisions in Europe:
-
--   economic opportunities such as potential incomes
--   access to healthcare
--   access to good education for the children
--   social factors such as child support, the access to other family members or a social group of people of similar culture
--   political climate in home and destination country
-
-ACHTUNG @LENNART,das können wir so nicht schreiben. Das ist zwar plausibel, aber es steht so nicht in unserer Literatur und wir geben dafür auch keine Quellen an. Wir nehmen an, dass solche Überlegungen naheliegend sind, da wir Quellen haben, die solche Faktoren im HEIMATland untersuchen. (Bildungsstand, Kinder, Soziales Netz, Income etc.).
-
-To isolate the effect of AfD vote shares we introduce control variables that should capture the influence of the other factors.
+The connection we are trying to evaluate is hard to isolate cleanly. To isolate the effect of AfD vote shares we introduce control variables aiming to capture the influence of potential confounders. Based on our general intuition and the above introduced underlying studies, which highlight the impact of economic, social, and other factors on foreigners decisions to migrate, we employ the following six control variables. Even though the mentioned studies focus on the conditions in peoples home countries *before* the migration process (or even the decision making process), it seems intuitive that similar variables, e.g. economic outlook, social networks etc., might also have an effect on the destination choices of migrants, when looking at potential destination countries.
 
 The control variable "Big Cities" is supposed to capture the impact of greater attractiveness of large cities due to better economic opportunities, better access to healthcare and other social factors.
 
