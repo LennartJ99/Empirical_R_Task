@@ -23,8 +23,7 @@ source(here("output1","Regression.R"))
 
 ```{r}
 etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017),
-
-digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2")),"case 3","case 4") )
+digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2","case 3","case 4") )
 ```
 
 ## Interpretation
