@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,16 +65,14 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-
 </header>
 
-
-<p>The following document is a presentation of the Data that was used for our Research Project. We will give an overview of the used Data, present the sources and discuss the quality of the used Data. Additionally there will be a Scatter plot and a histogram for the main outcome variable (Change of the number of EU migrants per voting district) and the endogenous variable (AFD voting shares per voting district).</p>
-<section id="endogenous-variable-afd-voting-shares" class="level2">
-<h2 class="anchored" data-anchor-id="endogenous-variable-afd-voting-shares">Endogenous Variable: AFD Voting Shares</h2>
-<p>We used voting data from the national German elections in the years 2017 and 2021. The data is from the “Bundeswahlleiterin” (Federal Returning Officer), which is responsible for the overview and organisation of the federal voting for the Bundestag. The “Bundeswahlleiterin” is directly appointed by the Federal Ministry of the Interior (<a href="https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html" class="uri">https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html</a>). Therefor it is data from an official source and accurate. The unit of measurement are the AFD election results of the second vote in percentage points for each voting district.</p>
+<p>The following document is a description of the data that was used for our research project as described in milestone 2. We will provide an overview of the data we used, present sources and discuss data quality. Additionally, there we provide a scatter plot and a histogram for the main outcome variable (change of the number of EU migrants per voting district) and the endogenous variable (AfD vote share per voting district).</p>
+<section id="endogenous-variable-afd-vote-shares" class="level2">
+<h2 class="anchored" data-anchor-id="endogenous-variable-afd-vote-shares">Endogenous Variable: AfD Vote Shares</h2>
+<p>We used election data from the national German elections in the years 2017 and 2021. The data is from the “Bundeswahlleiterin” (Federal Returning Officer), which is responsible for the overview and organisation of the federal elections for the Bundestag. The “Bundeswahlleiterin” is directly appointed by the Federal Ministry of the Interior (<a href="https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html" class="uri">https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html</a>). Due to it coming from an official source, we assume the data to be accurate. The unit of measurement are the AfD election results of the second vote in percentage points for each voting district.</p>
 <p><em>Link: <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em></p>
-<p>This is the election data of 2021. “Prozent” is the election result from 2021, “VorpProzent” is the election data from the previous election so 2017.</p>
+<p>This is the election data of 2021. “Prozent” is the election result from 2021, “VorpProzent” is the election data from the previous election in 2017.</p>
 <p><em>Citation: the Federal Returning Officer, Tabelle: Ergebnisse nach Wahlkreisen (flacher Aufbau). <a href="https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv" class="uri">https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv</a></em></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -109,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="main-outcome-variable-change-of-the-number-of-eu-migrants" class="level2">
 <h2 class="anchored" data-anchor-id="main-outcome-variable-change-of-the-number-of-eu-migrants">Main outcome variable: Change of the number of EU migrants</h2>
-<p>The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/_node.html). We used Migration Data from 2016 and 2020 as a Baseline for the elections in the years 2017 and 2021. We then observed the change of Migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in September, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 month and 15 months after the election. Due to the migration data only being accessible for federal units, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the [Spatial Data] part.</p>
+<p>The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again, DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore, the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/_node.html). We used migration data from 2016 and 2020 as a baseline for the elections in the years 2017 and 2021. We then observed the change of migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in september, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 months and 15 months after the election. Due to the migration data only being accessible for county districts, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the [Spatial Data] part.</p>
 <p><em>Link: <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
 <p>To acces the data that was used, it is necessary to create a free account and select the years 2016, 2017, 2018, 2020, 2021 and 2022.</p>
 <p><em>Citation: DESTATIS. 12521-0040:Ausländer: Kreise, Stichtag, Geschlecht. <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
@@ -178,32 +176,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="scatterplot-of-the-main-variables">Scatterplot of the Main Variables</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-9-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-9-4.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -211,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="control-variables">Control Variables</h2>
 <section id="cv1-big-cities" class="level3">
 <h3 class="anchored" data-anchor-id="cv1-big-cities">CV1: Big Cities</h3>
-<p>We label our voting districts if they are part of a big city or not. As a big city we define the top 15 cities in Germany based on population. We chose this differentiation because there is a large gap in population between number 15, Duisburg with 502000 inhabitants and number 16, Bochum with 365000 inhabitants. The data is from DESTATIS. Due to the data being from an official source the quality of the data can be assumed to be good. The unit of measurement is a dummy variable with 1 if the voting district is part of one of the top 15 cities and 0 if not.</p>
+<p>We categorize our voting districts according to whether they are located within a major city. As “Big cities” we define the top 15 cities in Germany based on population. We chose this differentiation because there is a large gap in population between number 15, Duisburg, with 502.000 inhabitants and number 16, Bochum, with 365.000 inhabitants. The data is from DESTATIS. Due to the data being from an official source the quality of the data can be assumed to be good. The unit of measurement is a dummy variable with 1 if the voting district is part of one of the top 15 cities and 0 if not.</p>
 <p><em>Link: <a href="https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?__blob=publicationFile" class="uri">https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?\_\_blob=publicationFile</a></em></p>
 <p><em>Citation: DESTATIS. Städte in Deutschland. <a href="https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?__blob=publicationFile" class="uri">https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/05-staedte.xlsx?\_\_blob=publicationFile</a></em></p>
 <div class="cell">
@@ -253,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="cv3-healthcare" class="level3">
 <h3 class="anchored" data-anchor-id="cv3-healthcare">CV3: Healthcare</h3>
-<p>One of our control variables is the access to healthcare for each federal district. To quantify this, we use the number of hospital beds per 1000 inhabitants. The data is from the INKAR database, which is a database for indicators of spatial and urban development (BBSR) in Germany, published by the Federal Institute for research on Building, Urban Affairs and Spatial Development. The data is from an official source and can be assumed to be reliable. The data is only available till 2021, so we used data from the years 2017, 2018 and 2021 and used the 2021 data for both 2021 and 2022. The unit of measurement is the number of hospital beds per 1000 inhabitants. s <em>Link:<a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
+<p>One of our control variables is the access to healthcare for each federal district. To quantify this, we use the number of hospital beds per 1000 inhabitants. The data is from the INKAR database, which is a database for indicators of spatial and urban development (BBSR) in Germany, published by the Federal Institute for research on Building, Urban Affairs and Spatial Development. The data is from an official source and can be assumed to be reliable. The data is only available till 2021, so we used data from the years 2017, 2018 and 2021 and used the 2021 data for both 2021 and 2022. The unit of measurement is the number of hospital beds per 1000 inhabitants. <em>Link:<a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
 <p>To access the specific data, it is necessary to select “Medizinische und soziale Versorgung”, “Medizinische Versorgung” and then “Krankenhausbetten”. Afterwards it is necessary to select all federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
 <p><em>Citation: BBSR, INKAR Database: Krankenhausbetten je 1000 Einwohner. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
 <div class="cell">
@@ -303,31 +285,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-15-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-15-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="cv4-purchase-power" class="level3">
 <h3 class="anchored" data-anchor-id="cv4-purchase-power">CV4: Purchase Power</h3>
-<p>Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per Inhabitant in Euros. That means its a combination of both the income as well as the living costs in the corresponding state.</p>
+<p>Our next control variable is the purchasing power of households. Again, we use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so again we use data from 2017 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the purchasing power per inhabitant in euros. That means its a combination of both the income as well as the living costs in the corresponding state.</p>
 <p><em>Link: <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em> To access the specific data, it is necessary to select “Privateinkommen,”Private Schulden” and then “Kaufkraft”, select all the federal districts and the years 2017,2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
 <p><em>Citattion:BBSR, IMKAR Database: Kaufkraft je Einwohner. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
 <div class="cell">
@@ -377,25 +347,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-19-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-19-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -403,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="cv5-unemployment">CV5: Unemployment</h3>
 <p>Our next control variable is the unemployment rate in each state. We use data from the INKAR database from the BBSR, which can be assumed to be reliable quality data due to it being from a federal institution. The data is only available till the year 2021, so we use data from 2017, 2018 and 2021 for the corresponding years, but use the 2021 also for the regression of the year 2022. The unit of measurement is the unemployment rate in percent.</p>
 <p><em>Link: <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
-<p>Toa cess the data, it is necessary to select “Absolutzahlen” and then ““Arbeitslosenzahlen”, select all the federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
+<p>To access the data, it is necessary to select “Absolutzahlen” and then ““Arbeitslosenzahlen”, select all the federal districts and the years 2017, 2018 and 2021. Unfortunately there is no direct link to the dataset.</p>
 <p><em>Citation: BBSR, INKAR Database: Arbeitslosenzahlen. <a href="https://www.inkar.de/WizardStart" class="uri">https://www.inkar.de/WizardStart</a></em></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -452,25 +410,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-23-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-23-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -478,7 +424,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="cv6-total-population">CV6: Total Population</h3>
 <p>Our final control variable is the total population of EU migrants before the election. This data is from the same dataset as the <a href="#main-outcome-variable-change-of-the-number-of-eu-migrants">Main outcome variable: Change of the number of EU migrants</a>. We use data from 2016 and 2020 as they are our baseline numbers. The data is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. The data is from an official source and can be assumed to be reliable. The unit of measurement is the total number of EU migrants in each voting district.</p>
 <p><em>Link: <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
-<p>To acces the data that was used, it is necessary to create a free account and select the years 2016 and 2020.</p>
+<p>To access the data that was used, it is necessary to create a free account and select the years 2016 and 2020.</p>
 <p><em>Citation: DESTATIS. 12521-0040:Ausländer: Kreise, Stichtag, Geschlecht. <a href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb" class="uri">https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=12521-0040&amp;bypass=true&amp;levelindex=1&amp;levelid=1719084022304#abreadcrumb</a></em></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -512,18 +458,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Dataset_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="Dataset_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -532,8 +470,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="spatial-data">Spatial Data</h2>
 <section id="thought-process" class="level3">
 <h3 class="anchored" data-anchor-id="thought-process">Thought Process</h3>
-<p>The migration data is only accessible on federal level and the voting data only on voting district level. We decided to project the migration data on the voting district level by using spatial data. We determined, how each federal district is divided into the different voting districts by area. The percentage of a federal district, that belongs to a voting district is used to weight the federal data. This way variables, that are only available on federal district level can be assigned to voting districts. For example if 50% of a federal district belongs to a voting district, 50% of the migrants in said district are assigned to the voting district. Because voting districts are usually a part of multiple federal district, this weighted data is added up. The end result is, that we define voting districts by a combination of different partial federal districts, weighted by the area.</p>
-<p>By using this method we have to assume that population and migrants are distributed equally across the federal district area. This is a very strong assumption. The main reason for us to think this can be assumed to be true is the structure of the federal and voting data. Our initial assumption is mainly violated by large centers of population that concentrate a lot of population and migrants. Those centers of populations are usually their own federal district and not part of a larger federal district, which includes further rural areas. In those centers of populations the population can be seen as roughly equally distributed. A mixture of rural and urban areas, which would implement a strong Bias into our regression, is not common. If such a mix is happening the influence of the urban centers is not as grave, as those are small urban centers, while the larger ones are their own federal districts. To further strengthen this method, we manually assigned percentages to voting districts that are solely part of large population centers (and thus federal districts), such as Berlin. For example Berlin is a federal district that is divided into 12 voting districts, that differ by size are nearly equal in population. Here we assigned each voting district 1/12 of the federal district population instead of dividing by size. This is possible due to the German law, which states that voting districts have to beroughly equal in size (https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html).</p>
+<p>The migration data is only accessible on federal level and the voting data only on voting district level. We decided to project the migration data on the voting district level by using spatial data. We determined how each federal district is divided into the different voting districts by area. The percentage of a federal district, that belongs to a voting district is used to weight the federal data. This way variables, that are only available on federal district level can be assigned to voting districts. For example, if 50% of a federal district belong to a voting district, 50% of the migrants in said district are assigned to the voting district. Because voting districts are usually a part of multiple federal district, this weighted data is added up. The final result is, that we define voting districts as a combination of different partial federal districts, weighted by the area.</p>
+<p>By using this method we have to assume that population and migrants are distributed equally across the federal district area. This is a very strong assumption. The main reason why this assumption can be assumed to be accurate is the structure of the federal and voting data. Our initial assumption is mainly violated by large centers of population that concentrate a lot of population and migrants. Those centers of populations are usually their own federal district and not part of a larger federal district, which includes further rural areas. In those centers of populations the population can be seen as roughly equally distributed. A mixture of rural and urban areas, which would implement a strong bias into our regression, is not common. If such a mix occurs, the influence of the urban centers is not as grave, as they are small urban centers, while the larger ones are their own federal districts. To further strengthen this method, we manually assigned percentages to voting districts that are solely part of large population centers (and thus federal districts), such as Berlin. For example Berlin is a federal district that is divided into 12 voting districts, that differ by size but are nearly equal in population. Here we assigned each voting district 1/12 of the federal district population instead of dividing by size. This is possible due to the German law, which states that voting districts have to be roughly equal in size (https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/wahlkreiseinteilung.html).</p>
 </section>
 <section id="programming-process" class="level3">
 <h3 class="anchored" data-anchor-id="programming-process">Programming Process</h3>
@@ -542,8 +480,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Create maps with borders of voting districts and federal districts by using the st_read command from the “sf”-package, which is used to wrangle spatial data.</p></li>
 <li><p>Use the st_intersection command to combine both datasets. This command joins the voting district data with the federal district data by using the borders of both spatial datasets.</p></li>
 <li><p>Use the st_area command to calculate each voting district and federal district intersection.</p></li>
-<li><p>We now determine how much of each federal voting district belongs to a specific voting district (f.e. 50% of federal district 1 belongs to voting district 1 and 50% to voting district 2). This is used to weigh our data and assign the federal district data to the voting district data. Each voting district is now a combination of each federal district that belongs to it.</p></li>
-<li><p>We eliminated dependencies in the dataset that existed in the spatial data but not in reality. We determined by Trial and Error that 3% is a good treshhold. That means, if less then 3% of a federal district belongs to a certain voting district the dependency is eliminated. We assume this faulty dependencies are due to the spatial data not being entirely accurate.</p></li>
+<li><p>We now determine how much of each federal voting district belongs to a specific voting district (f.e. 50% of federal district 1 belong to voting district 1 and 50% to voting district 2). This is used to weight our data and assign the federal district data to the voting district data. Each voting district is now a combination of each federal district that belongs to it.</p></li>
+<li><p>We eliminated dependencies in the dataset that existed in the spatial data but not in reality. We determined by trial and error that 3% is a good threshold. That means, if less then 3% of a federal district belong to a certain voting district, the dependency is eliminated. We assume this faulty dependencies are due to the spatial data not being entirely accurate.</p></li>
 </ol>
 </section>
 <section id="voting-districts-data" class="level3">
@@ -644,27 +582,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -674,17 +595,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -696,130 +608,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -863,7 +652,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -889,32 +677,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -975,7 +737,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
