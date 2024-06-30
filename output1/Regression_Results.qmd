@@ -33,7 +33,7 @@ All our result are positive, ranging in between 0.34 and 1. This indicates that 
 
 The direction of the results is different then we would have thought. We assumed, that higher AFD voting results (as a proxy for xenophobia), leads to a decrease in the percentage change of EU migrants. Instead our regressions results show the opposite.
 
-### OLS Regression with control variables 
+### OLS Regression with control variables
 
 ## Regression tables
 
@@ -48,8 +48,3 @@ digits="r3", fitstat=c('n','ar2'), headers=c("case 3","case 4") )
 ## Interpretation
 
 After including control variables, our regression
-
-
-
-
-
