@@ -12,7 +12,9 @@ The following document is a description of the data that was used for our resear
 
 ## Endogenous Variable: AfD Vote Shares
 
-We used election data from the national German elections in the years 2017 and 2021. The data is from the "Bundeswahlleiterin" (Federal Returning Officer), which is responsible for the overview and organisation of the federal elections for the Bundestag. The "Bundeswahlleiterin" is directly appointed by the Federal Ministry of the Interior (<https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html>). Due to it coming from an official source, we assume the data to be accurate. The unit of measurement are the AfD election results of the second vote in percentage points for each voting district.
+We used election data from the national German elections in the years 2017 and 2021. The data is from the "Bundeswahlleiterin" (Federal Returning Officer), which is responsible for the overview and organisation of the federal elections for the Bundestag. The "Bundeswahlleiterin" is directly appointed by the Federal Ministry of the Interior.[^1] Due to it coming from an official source, we assume the data to be accurate. The unit of measurement are the AfD election results of the second vote in percentage points for each voting district.
+
+[^1]: <https://www.bundeswahlleiterin.de/en/ueber-uns/aufgaben.html>
 
 *Link: <https://www.bundeswahlleiterin.de/dam/jcr/860495c9-83fb-4068-8a99-c1c985ffffd2/w-btw21_kerg2.csv>*
 
@@ -59,7 +61,9 @@ sum(is.na(Combined_Data$Election2021))
 
 ## Main outcome variable: Change of the number of EU migrants
 
-The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again, DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state. Therefore, the data can be assumed to be extremely trustworthy (https://www.destatis.de/EN/About-Us/\_node.html). We used migration data from 2016 and 2020 as a baseline for the elections in the years 2017 and 2021. We then observed the change of migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in september, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 months and 15 months after the election. Due to the migration data only being accessible for county districts, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the \[Spatial Data\] part.
+The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again, DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state.[^2] Therefore, the data can be assumed to be extremely trustworthy. We used migration data from 2016 and 2020 as a baseline for the elections in the years 2017 and 2021. We then observed the change of migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in september, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 months and 15 months after the election. Due to the migration data only being accessible for county districts, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the \[Spatial Data\] part.
+
+[^2]: [https://www.destatis.de/EN/About-Us/\\\_node.html](https://www.destatis.de/EN/About-Us/\_node.html){.uri}
 
 *Link: <https://www-genesis.destatis.de/genesis//online?operation=table&code=12521-0040&bypass=true&levelindex=1&levelid=1719084022304#abreadcrumb>*
 
@@ -466,3 +470,5 @@ To access federal district spatial data, we used data provided by the Federal Ag
 This link provides data for different organisational units. To access the spatial federal district data, it is necessary to select the files with the name "VG250_KRS".
 
 *Citation: Federal Agency for Cartography and Geodesy, Verwaltungsgebiete 1:250 000 Stand 01.01. (VG250 01.01.). <https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip>*
+
+## References
