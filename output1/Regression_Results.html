@@ -81,32 +81,30 @@ ul.task-list li input[type="checkbox"] {
                        case 1           case 2             case 3
 Dependent Var.: DiffTotal2017    DiffTotal2018      DiffTotal2021
                                                                  
-Constant        5.791 (3.671)    2.396 (2.021)     -0.594 (0.381)
-Election2017    0.426 (0.265) 1.001*** (0.146)                   
-Election2021                                     0.337*** (0.032)
+Constant        5.791 (3.671)    2.396 (2.021)    -1.135* (0.489)
+Election2017    0.426 (0.265) 1.001*** (0.146)   0.320*** (0.036)
 _______________ _____________ ________________   ________________
 S.E. type                 IID              IID                IID
 Observations              292              292                288
-Adj. R2               0.00542          0.13708            0.27492
+Adj. R2               0.00542          0.13708            0.21775
 
-                feols(data = s...2
-                            case 4
-Dependent Var.:      DiffTotal2022
-                                  
-Constant          -1.945** (0.653)
-Election2017                      
-Election2021      0.715*** (0.055)
-_______________   ________________
-S.E. type                      IID
-Observations                   288
-Adj. R2                    0.36811
+                feols(data = si..
+                           case 4
+Dependent Var.:     DiffTotal2022
+                                 
+Constant        -3.400*** (0.839)
+Election2017     0.702*** (0.061)
+_______________ _________________
+S.E. type                     IID
+Observations                  288
+Adj. R2                   0.31347
 ---
 Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<section id="result-description" class="level2">
+<h2 class="anchored" data-anchor-id="result-description">Result description</h2>
 <p>All our result are positive, ranging in between 0.34 and 1. This indicates that higher AFD results actually lead to an percentage increase in EU migrants. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AFD alone are not enough to explain the change of EU migrants.</p>
 <p>The direction of the results is different then we would have thought. We assumed, that higher AFD voting results (as a proxy for xenophobia), leads to a decrease in the percentage change of EU migrants. Instead our regressions results show the opposite.</p>
 <section id="ols-regression-with-control-variables" class="level3">
@@ -117,63 +115,56 @@ Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h2 class="anchored" data-anchor-id="regression-tables-1">Regression tables</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>                  feols(data = sim.. feols(data = si.. feols(data = si...1
-                              case 1            case 2              case 3
-Dependent Var.:        DiffTotal2017     DiffTotal2018       DiffTotal2021
-                                                                          
-Constant            33.701* (14.834) 54.580*** (9.888)   14.690*** (3.205)
-Election2017         0.669** (0.237)  0.752*** (0.160)                    
-Big.City           86.977*** (3.471) 41.449*** (2.337)      -0.190 (0.777)
-East.Germany      -15.306*** (3.617)   -5.527* (2.447)    3.701*** (0.842)
-Total2016              0.000 (0.000)    0.000* (0.000)                    
-Unemployment2017      0.718. (0.392)                                      
-PurchasePower2017    -0.001* (0.001)                                      
-KH2017               -0.843* (0.405)                                      
-Unemployment2018                       -0.468. (0.281)                    
-PurchasePower2018                    -0.002*** (0.000)                    
-KH2018                                 -0.595* (0.275)                    
-Election2021                                                 0.033 (0.055)
-Total2020                                                 0.000*** (0.000)
-Unemployment2021                                         -0.576*** (0.085)
-PurchasePower2021                                          0.000** (0.000)
-KH2021                                                       0.052 (0.086)
-_________________ __________________ _________________   _________________
-S.E. type                        IID               IID                 IID
-Observations                     292               292                 288
-Adj. R2                      0.74113           0.65922             0.45804
-
-                  feols(data = si...2
-                               case 4
-Dependent Var.:         DiffTotal2022
-                                     
-Constant            23.892*** (5.653)
-Election2017                         
-Big.City               -1.307 (1.370)
-East.Germany         6.832*** (1.485)
-Total2016                            
-Unemployment2017                     
-PurchasePower2017                    
-KH2017                               
-Unemployment2018                     
-PurchasePower2018                    
-KH2018                               
-Election2021           0.170. (0.096)
-Total2020             0.000** (0.000)
-Unemployment2021    -0.719*** (0.150)
-PurchasePower2021    -0.001** (0.000)
-KH2021                  0.142 (0.152)
-_________________   _________________
-S.E. type                         IID
-Observations                      288
-Adj. R2                       0.49829
+<pre><code>                  feols(data = sim.. feols(data = si..
+                              case 1            case 2
+Dependent Var.:        DiffTotal2017     DiffTotal2018
+                                                      
+Constant            33.701* (14.834) 54.580*** (9.888)
+Election2017         0.669** (0.237)  0.752*** (0.160)
+Big.City           86.977*** (3.471) 41.449*** (2.337)
+East.Germany      -15.306*** (3.617)   -5.527* (2.447)
+Total2016              0.000 (0.000)    0.000* (0.000)
+Unemployment2017      0.718. (0.392)                  
+PurchasePower2017    -0.001* (0.001)                  
+KH2017               -0.843* (0.405)                  
+Unemployment2018                       -0.468. (0.281)
+PurchasePower2018                    -0.002*** (0.000)
+KH2018                                 -0.595* (0.275)
+_________________ __________________ _________________
+S.E. type                        IID               IID
+Observations                     292               292
+Adj. R2                      0.74113           0.65922
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  feols(data = si.. feols(data = si...1
+                             case 3              case 4
+Dependent Var.:       DiffTotal2021       DiffTotal2022
+                                                       
+Constant          14.690*** (3.205)   23.892*** (5.653)
+Election2021          0.033 (0.055)      0.170. (0.096)
+Big.City             -0.190 (0.777)      -1.307 (1.370)
+East.Germany       3.701*** (0.842)    6.832*** (1.485)
+Total2020          0.000*** (0.000)     0.000** (0.000)
+Unemployment2021  -0.576*** (0.085)   -0.719*** (0.150)
+PurchasePower2021   0.000** (0.000)    -0.001** (0.000)
+KH2021                0.052 (0.086)       0.142 (0.152)
+_________________ _________________   _________________
+S.E. type                       IID                 IID
+Observations                    288                 288
+Adj. R2                     0.45804             0.49829
 ---
 Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretation-1" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation-1">Interpretation</h2>
-<p>To interpret our results we split our regression results</p>
+<section id="result-description-1" class="level2">
+<h2 class="anchored" data-anchor-id="result-description-1">Result description</h2>
+<p>After including control variables, our regression</p>
+</section>
+<section id="conclusion-and" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-and">Conclusion and</h2>
 </section>
 
 </main>
