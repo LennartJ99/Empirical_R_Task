@@ -20,7 +20,7 @@ Friebel, Gallego, and Mendola (2013) approached migration intentions from the pe
 
 However, there is a notable absence of literature on the effect of previously non-violent indicators of xenophobia on migration decisions of foreigners, which this study aims to address by using AfD election results. Unlike previous studies that assume physical violence precedes migration as an explanatory variable, this research emphasizes the general political climate in the destination country. Understanding the relationship between xenophobia – or the political climate in general – and the destination choices of foreigners might be essential for policymakers in making informed decisions regarding immigration policies and integration strategies.
 
-## Data
+## Data Description
 
 ## Econometric Approach
 
