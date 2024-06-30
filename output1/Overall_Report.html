@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lennart Joop and Julia Daetz">
+
+<title>Overall_Report</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Overall_Report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Overall_Report_files/libs/quarto-html/quarto.js"></script>
+<script src="Overall_Report_files/libs/quarto-html/popper.min.js"></script>
+<script src="Overall_Report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Overall_Report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Overall_Report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Overall_Report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Overall_Report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Overall_Report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Overall_Report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Overall_Report</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lennart Joop and Julia Daetz </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Existing research on migration decisions mainly focusses on migrants’ personal factors and conditions in their countries of origin. However, the conditions in potential destination countries, including societal attitudes towards immigrants, have been less explored. This study addresses this gap by examining how a country’s welcoming culture influences migration decisions of foreigners. To find a suitable proxy for a country’s welcoming culture, we look at the recent election results of parties known for their strong views on immigration. In the most recent European elections, the populist and far-right party Alternative for Germany (AfD), emerged as the second strongest party in Germany, significantly ahead of the Green Party, which distinguishes itself greatly from the AfD through its progressive stance on the migration debate. Known for its negative attitudes toward migration, the AfD’s 2017 election program, for example, was highly critical of multiculturalism, arguing for the preservation of the ‘German Leitkultur’ and against the acceptance of refugees. Conversely to previous research, that has already shown a positive relationship between the number of immigrants and increased support for right-wing parties, this study aims to analyze whether the strength of right-wing parties influences migrants’ choice of destination. Specifically, it aims to answer the following question: How does the AfD vote share affect the migration decisions of EU foreigners in Germany? To do so, we perform a linear regression analysis using AfD election results from the 2017 and 2021 German federal elections at the district level, as well as data on changes in EU migration from the Federal Statistical Office. While it was initially understood as soft eurosceptic and socially conservative party (Arzheimer et. al, 2019) when founded in 2013, the AfD shifted its focus to immigration issues following the 2015 refugee crisis. We therefore find it reasonable to use post-2015 election results to ensure their vote shares being accurate proxies for xenophobia. Furthermore, socioeconomic data such as purchasing power, unemployment rate, and urbanity are used to ensure the study’s robustness.</p>
+</section>
+<section id="lierature-review" class="level2">
+<h2 class="anchored" data-anchor-id="lierature-review">Lierature Review</h2>
+<p>While the impact of the election results of anti-immigrant parties on the destination choices of foreigners is still largely unknown, the reverse has been researched. Otto and Steinhardt (2014) analyzed electoral data from 103 districts in Hamburg between 1987 and 1998 and found a significant positive relationship between the increasing concentration of foreigners and votes for xenophobic, extreme right-wing parties.</p>
+<p>The existing migration literature primarily focuses on evaluating the drivers and barriers to migration by examining living conditions in the home countries of potential migrants, rather than those in the destination country. Williams et.al. (2018) used multilevel regression to examine the migration motives and barriers of young people in nine European countries, analyzing their intentions to migrate within the next one to five years through an online panel survey. They identified a number of macro, meso and micro factors such as financial situation, education, satisfaction with the local community or the migrant’s personality as influencing migration decisions. Similarly, Otrachshenko and Popova (2014) found that life (dis)satisfaction, composed of similar factors as mentioned above, affect migration decisions.</p>
+<p>Friebel, Gallego, and Mendola (2013) approached migration intentions from the perspective of destination countries and found that migration intentions decrease after incidents of violence, especially for families with children and those without social networks. This conclusion was based on a household survey conducted in Mozambique in 2008. In addition, Steinhardt (2018), examining the impact of anti-immigrant attacks in the 1990s in West Germany, found that exposure to xenophobic violence reduced subjective well-being and increased return intentions, while also reducing investment in acquiring language skills.</p>
+<p>However, there is a notable absence of literature on the effect of previously non-violent indicators of xenophobia on migration decisions of foreigners, which this study aims to address by using AfD election results. Unlike previous studies that assume physical violence precedes migration as an explanatory variable, this research emphasizes the general political climate in the destination country. Understanding the relationship between xenophobia – or the political climate in general – and the destination choices of foreigners might be essential for policymakers in making informed decisions regarding immigration policies and integration strategies.</p>
+</section>
+<section id="data-description" class="level2">
+<h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
+<p><a href="./Dataset.html">Dataset</a></p>
+</section>
+<section id="econometric-approach" class="level2">
+<h2 class="anchored" data-anchor-id="econometric-approach">Econometric Approach</h2>
+<p><a href="./Econometric_Approach.html">Econometric Approach</a></p>
+</section>
+<section id="regression-results" class="level2">
+<h2 class="anchored" data-anchor-id="regression-results">Regression Results</h2>
+<p><a href="./Regression_Results.html">Regression Results</a></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
+<p>Arzheimer, Kai, and Carl C. Berning. “How the Alternative for Germany (AfD) and their voters veered to the radical right, 2013–2017.”&nbsp;<em>Electoral Studies</em>&nbsp;60 (2019): 102040.</p>
+<p>Friebel, Guido, Juan Miguel Gallego, and Mariapia Mendola. “Xenophobic attacks, migration intentions, and networks: evidence from the South of Africa.” Journal of Population Economics 26 (2013): 555-591.</p>
+<p>Otrachshenko, Vladimir, and Olga Popova. “Life (dis) satisfaction and the intention to migrate: Evidence from Central and Eastern Europe.” The Journal of Socio-Economics 48 (2014): 40-49.</p>
+<p>Otto, Alkis Henri, and Max Friedrich Steinhardt. “Immigration and election outcomes—Evidence from city districts in Hamburg.” Regional Science and Urban Economics 45 (2014): 67-79.</p>
+<p>Steinhardt, Max Friedrich. “The impact of xenophobic violence on the integration of immigrants.” (2018).</p>
+<p>Williams, Allan M., et al.&nbsp;“The migration intentions of young adults in Europe: A comparative, multilevel analysis.” Population, Space and Place 24.1 (2018): e2123.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

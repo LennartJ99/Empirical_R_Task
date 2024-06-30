@@ -22,9 +22,15 @@ However, there is a notable absence of literature on the effect of previously no
 
 ## Data Description
 
+[Dataset](./Dataset.html)
+
 ## Econometric Approach
 
+[Econometric Approach](./Econometric_Approach.html)
+
 ## Regression Results
+
+[Regression Results](./Regression_Results.html)
 
 ## Conclusion
 
