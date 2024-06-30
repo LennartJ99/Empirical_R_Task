@@ -1,0 +1,55 @@
+---
+title: "Regression Results"
+format: html
+editor: visual
+author: "Lennart Joop and Julia Daetz"
+bibliography: references.bib
+echo: false
+warning: false
+---
+
+The following document presents the regression results of our work in accordance to milestone 4 "Results".
+
+### OLS Regression without control variables
+
+## Regression tables
+
+```{r,include=FALSE}
+library(here)
+library(fixest)
+source(here("output1","Master_Script.R"))
+source(here("output1","Regression.R"))
+```
+
+```{r}
+etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017),
+feols(data=simple.lm.per3,DiffTotal2021~Election2021),
+feols(data=simple.lm.per4,DiffTotal2022~Election2021),
+digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2","case 3","case 4") )
+```
+
+## Interpretation
+
+All our result are positive, ranging in between 0.34 and 1. This indicates that higher AFD results actually lead to an percentage increase in EU migrants. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AFD alone are not enough to explain the change of EU migrants.
+
+The direction of the results is different then we would have thought. We assumed, that higher AFD voting results (as a proxy for xenophobia), leads to a decrease in the percentage change of EU migrants. Instead our regressions results show the opposite.
+
+### OLS Regression with control variables 
+
+## Regression tables
+
+```{r}
+etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germany+Total2016+Unemployment2017+PurchasePower2017+KH2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018),
+feols(data=simple.lm.per3,DiffTotal2021~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021),
+feols(data=simple.lm.per4,DiffTotal2022~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021),
+digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2","case 3","case 4") )
+```
+
+## Interpretation
+
+After including control variables, our regression
+
+
+
+
+
