@@ -87,5 +87,5 @@ control.rev.lm.per2<-summ(lm(data=simple.lm.per3, Election2021~DiffTotal2021+Big
 print(control.rev.lm.per1)
 print(control.rev.lm.per2)
 
-###Balancing Test
+
 

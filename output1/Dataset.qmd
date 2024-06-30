@@ -63,7 +63,7 @@ sum(is.na(Combined_Data$Election2021))
 
 The data regarding the number of EU Migrants is from DESTATIS, the official German Statistical Office, and in particular from the GENESIS-Database. Again, DESTATIS is the Office, which is responsible for official German data regarding economics, society, environment and the state.[^2] Therefore, the data can be assumed to be extremely trustworthy. We used migration data from 2016 and 2020 as a baseline for the elections in the years 2017 and 2021. We then observed the change of migration after the elections by comparing the baseline in 2016 to the years 2017 and 2018 and the baseline of 2020 to the years 2021 and 2022. Due to the election being in september, but the cutoffs for the migration data being the end of the year, we look at the change of migrants 3 months after the election (2017 compared to 2016 and 2021 compared to 2020) and 15 months after the election (2018 compared to 2016 and 2022 compared to 2020). The unit of measurement is the percentage change of the EU migrants 3 months and 15 months after the election. Due to the migration data only being accessible for county districts, which differ from voting districts, we combine the endogenous variable and the outcome variable by spatial matching. This will be explained in the \[Spatial Data\] part.
 
-[^2]: [https://www.destatis.de/EN/About-Us/\\\_node.html](https://www.destatis.de/EN/About-Us/\_node.html){.uri}
+[^2]: [https://www.destatis.de/EN/About-Us/\\\_node.html](https://www.destatis.de/EN/About-Us/_node.html){.uri}
 
 *Link: <https://www-genesis.destatis.de/genesis//online?operation=table&code=12521-0040&bypass=true&levelindex=1&levelid=1719084022304#abreadcrumb>*
 
