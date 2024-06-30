@@ -12,4 +12,14 @@ Existing research on migration decisions mainly focusses on migrants' personal f
 
 Arzheimer, Kai, and Carl C. Berning. "How the Alternative for Germany (AfD) and their voters veered to the radical right, 2013–2017." *Electoral Studies* 60 (2019): 102040.
 
+## Lierature Review
+
+While the impact of the election results of anti-immigrant parties on the destination choices of foreigners is still largely unknown, the reverse has been researched. Otto and Steinhardt (2014) analyzed electoral data from 103 districts in Hamburg between 1987 and 1998 and found a significant positive relationship between the increasing concentration of foreigners and votes for xenophobic, extreme right-wing parties.
+
+The existing migration literature primarily focuses on evaluating the drivers and barriers to migration by examining living conditions in the home countries of potential migrants, rather than those in the destination country. Williams et.al. (2018) used multilevel regression to examine the migration motives and barriers of young people in nine European countries, analyzing their intentions to migrate within the next one to five years through an online panel survey. They identified a number of macro, meso and micro factors such as financial situation, education, satisfaction with the local community or the migrant's personality as influencing migration decisions. Similarly, Otrachshenko and Popova (2014) found that life (dis)satisfaction, composed of similar factors as mentioned above, affect migration decisions.
+
+Friebel, Gallego, and Mendola (2013) approached migration intentions from the perspective of destination countries and found that migration intentions decrease after incidents of violence, especially for families with children and those without social networks. This conclusion was based on a household survey conducted in Mozambique in 2008. In addition, Steinhardt (2018), examining the impact of anti-immigrant attacks in the 1990s in West Germany, found that exposure to xenophobic violence reduced subjective well-being and increased return intentions, while also reducing investment in acquiring language skills.
+
+However, there is a notable absence of literature on the effect of previously non-violent indicators of xenophobia on migration decisions of foreigners, which this study aims to address by using AfD election results. Unlike previous studies that assume physical violence precedes migration as an explanatory variable, this research emphasizes the general political climate in the destination country. Understanding the relationship between xenophobia – or the political climate in general – and the destination choices of foreigners might be essential for policymakers in making informed decisions regarding immigration policies and integration strategies.
+
 ## Data
