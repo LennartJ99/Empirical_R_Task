@@ -23,9 +23,8 @@ source(here("output1","Regression.R"))
 
 ```{r}
 etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017),
-feols(data=simple.lm.per3,DiffTotal2021~Election2021),
-feols(data=simple.lm.per4,DiffTotal2022~Election2021),
-digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2","case 3","case 4") )
+
+digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2")),"case 3","case 4") )
 ```
 
 ## Interpretation
@@ -39,10 +38,11 @@ The direction of the results is different then we would have thought. We assumed
 ## Regression tables
 
 ```{r}
-etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germany+Total2016+Unemployment2017+PurchasePower2017+KH2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018),
-feols(data=simple.lm.per3,DiffTotal2021~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021),
+etable(feols(data=simple.lm.per1,DiffTotal2017~Election2017+Big.City+East.Germany+Total2016+Unemployment2017+PurchasePower2017+KH2017), feols(data=simple.lm.per2,DiffTotal2018~Election2017+Big.City+East.Germany+Total2016+Unemployment2018+PurchasePower2018+KH2018), digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2"))
+
+etable(feols(data=simple.lm.per3,DiffTotal2021~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021),
 feols(data=simple.lm.per4,DiffTotal2022~Election2021+Big.City+East.Germany+Total2020+Unemployment2021+PurchasePower2021+KH2021),
-digits="r3", fitstat=c('n','ar2'), headers=c("case 1","case 2","case 3","case 4") )
+digits="r3", fitstat=c('n','ar2'), headers=c("case 3","case 4") )
 ```
 
 ## Interpretation
