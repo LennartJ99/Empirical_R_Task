@@ -50,11 +50,10 @@ digits="r3", fitstat=c('n','ar2'), headers=c("case 3","case 4") )
 ## Result description
 
 After including control variables, our regression
-<<<<<<< HEAD
-=======
+
 
 
 ## Conclusion and 
 
 
->>>>>>> e2a294f375a3478a2df458cf89cc2754a61878a9
+
