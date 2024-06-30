@@ -32,7 +32,7 @@ digits="r3", fitstat=c('n','ar2'), headers=c( "case 3", "case 4" ))
 
 ## Result description
 
-All our result are positive, ranging in between 0.34 and 1. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant, for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AFD alone are not enough to explain the change of EU migrants.
+All our result are positive, ranging in between 0.34 and 1. In both election years the estimator is higher after the 15 month period in comparison to the 3 month period. For case 1 the result is not significant, for case 2,3 and 4, the results are in the 95% confidence interval. The explanation power of the model (R2) is higher for the 2021 election then the 2017 election and in both years higher for the 15 months period then the 3 months period. With case 4 having the highest R2 of 0,37, the overall explanation power of the model is still low. Voting results of the AfD alone are not enough to explain the change of EU migrants.
 
 ### OLS Regression with control variables
 
